@@ -6,7 +6,7 @@ import messages
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.geometry("1000x700")
+        self.geometry("1000x750")
         self.title("Aprendizaje Español → Inglés")
 
         self.current_screen = None

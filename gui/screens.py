@@ -155,7 +155,7 @@ class StartScreen(ctk.CTkFrame):
 
         widgets.titulo(self, messages.titulo)
         
-        widgets.message_start(self, messages.msg6)
+        widgets.message_start(self, messages.msg3)
         self.right_panel.update_idletasks()
         width = self.right_panel.winfo_width()
         functionalities.resize_text(self,type("Event", (), {"width": width}))
@@ -186,96 +186,226 @@ class StartScreen(ctk.CTkFrame):
                 self.categories_frame,
                 text=category,
                 font=ctk.CTkFont(size=14),
-                command=lambda c=category: self.select_category_mode(c)
+                command=lambda c=category: functionalities.select_category_mode(self, c)
             ).pack(fill="x", pady=4)
 
-    def select_category_mode(self, category):
-        self.category_mode = category
-        self.category_info_label.configure(
-            text=f"Categoría seleccionada: {category}"
-        )
 
-        # transición automática después de 1 segundo
-        if hasattr(self, "transition_job") and self.transition_job:
-            self.after_cancel(self.transition_job)
+    def build_irregular_options_screen(self):
+        functionalities.clear_right_panel(self)
 
-        self.transition_job = self.after(1000, self.start_game_screen)
+        widgets.titulo(self, messages.titulo)
+        
+        widgets.message_start(self, messages.msg4)
+        self.right_panel.update_idletasks()                 # Fuerza layout
+        width = self.right_panel.winfo_width()              # Ajusta wrap
+        functionalities.resize_text(self,type("Event", (), {"width": width}))
+
+        widgets.buttons_irregulars(self, "Verbos Irregulares aleatorios", "random")
+        widgets.buttons_irregulars(self, "Verbo en sus diferentes tiempos verbales", "grouped")
+
+    def select_irregular_mode(self, mode):
+        self.irregular_mode = mode
+        self.after(1000, self.start_game_screen)
+
 
 
     def start_game_screen(self):
-        from . import functionalities
-
         functionalities.clear_right_panel(self)
 
-        # ===== EXTRAER PALABRAS SEGÚN CATEGORÍA =====
-        if self.category_mode == "Aleatorio":
-            words = {}
-            for cat in learning_english:
-                if isinstance(learning_english[cat], dict):
-                    words.update(learning_english[cat])
-        else:
-            words = learning_english.get(self.category_mode, {})
+        # ===== INICIALIZAR CONTADORES SI ES PRIMERA VEZ =====
+        if not hasattr(self, "total_rounds"):
+            if self.level_mode == "custom":
+                self.total_rounds = self.custom_amount
+            else:
+                levels_map = {
+                    "A1": 500,
+                    "A2": 1000,
+                    "B1": 2000,
+                    "B2": 4000,
+                    "C1": 6000,
+                    "C2": 10000,
+                }
+                self.total_rounds = levels_map.get(self.level_mode, 10)
+            self.current_round = 0
+            self.correct_count = 0
+            self.incorrect_count = 0
+            self.score_points = 0
 
-        if not words:
+            # ===== EXTRAER PALABRAS =====
+            if self.category_mode == "List of Irregular Verbs":
+                if self.irregular_mode == "random":
+                    words = {}
+                    for verb in learning_english["List of Irregular Verbs"]:
+                        words.update(verb)
+                    self.words_pool = list(words.items())
+                else:  # modo grouped
+                    self.words_pool = learning_english["List of Irregular Verbs"]
+            else:
+                if self.category_mode == "Aleatorio":
+                    words = {}
+                    for cat in learning_english:
+                        if isinstance(learning_english[cat], dict):
+                            words.update(learning_english[cat])
+                else:
+                    words = learning_english.get(self.category_mode, {})
+
+                self.words_pool = list(words.items())
+
+        # ===== TERMINAR JUEGO =====
+        if self.current_round >= self.total_rounds:
+            self.show_final_results()
             return
+        self.current_round += 1
 
-        self.current_words = words
-        self.current_word_en, self.current_word_es = random.choice(list(words.items()))
-
-        # ===== MOSTRAR PALABRA SEGÚN IDIOMA =====
-        if self.language_mode == "en":
-            word_to_show = self.current_word_en
-            self.expected_answer = self.current_word_es
-        elif self.language_mode == "es":
-            word_to_show = self.current_word_es
-            self.expected_answer = self.current_word_en
-        else:
-            # modo aleatorio
-            if random.choice([True, False]):
+        if self.category_mode == "List of Irregular Verbs" and self.irregular_mode == "random":
+            self.current_word_en, self.current_word_es = random.choice(self.words_pool)
+            if self.language_mode == "en":
                 word_to_show = self.current_word_en
                 self.expected_answer = self.current_word_es
-            else:
+            elif self.language_mode == "es":
                 word_to_show = self.current_word_es
                 self.expected_answer = self.current_word_en
+            else:
+                if random.choice([True, False]):
+                    word_to_show = self.current_word_en
+                    self.expected_answer = self.current_word_es
+                else:
+                    word_to_show = self.current_word_es
+                    self.expected_answer = self.current_word_en
+            functionalities.build_normal_question(self, word_to_show)
 
-        # ===== UI =====
-        self.word_label = ctk.CTkLabel(
-            self.right_panel,
-            text=word_to_show,
-            font=ctk.CTkFont(size=40, weight="bold")
-        )
-        self.word_label.pack(pady=40)
+            # ===== CONTADOR INFERIOR =====
+            widgets.statistics_section(self)
 
-        self.answer_entry = ctk.CTkEntry(
-            self.right_panel,
-            placeholder_text="Escribe la traducción"
-        )
-        self.answer_entry.pack(pady=20)
+        elif self.category_mode == "List of Irregular Verbs" and self.irregular_mode == "grouped":
+            widgets.titulo(self, messages.titulo)
+            widgets.message_start(self, messages.msg6)
+        
+            verb_dict = random.choice(self.words_pool)
+            self.expected_answers = []
 
-        self.confirm_btn = ctk.CTkButton(
-            self.right_panel,
-            text="Confirmar",
-            command=self.check_answer
-        )
-        self.confirm_btn.pack(pady=10)
+            self.group_frame = ctk.CTkFrame(self.right_panel)
+            self.group_frame.pack(pady=60)
 
-    def check_answer(self):
-        user_answer = self.answer_entry.get().strip().title()
+            for key, value in verb_dict.items():
+                if self.language_mode == "en":
+                    show_word = key
+                    expected = value
+                elif self.language_mode == "es":
+                    show_word = value
+                    expected = key
+                else:
+                    if random.choice([True, False]):
+                        show_word = key
+                        expected = value
+                    else:
+                        show_word = value
+                        expected = key
+                row = ctk.CTkFrame(self.group_frame)
+                row.pack(pady=5)
 
-        if user_answer == self.expected_answer:
-            result_text = "✅ Correcto"
+                ctk.CTkLabel(
+                    row,
+                    text=show_word,
+                    width=150
+                ).pack(side="left", padx=10)
+                entry = ctk.CTkEntry(row, width=200)
+                entry.pack(side="left", padx=10)
+                entry.bind("<Return>", lambda e: functionalities.check_grouped_answers(self))
+                self.expected_answers.append((row, entry, expected))
+
+            # Botón confirmar
+            ctk.CTkButton(
+                self.right_panel,
+                text="Confirmar",
+                command=lambda: functionalities.check_grouped_answers(self)
+            ).pack(pady=15)
+
+            # ===== CONTADOR INFERIOR =====
+            widgets.statistics_section(self)
         else:
-            result_text = f"❌ Incorrecto\nRespuesta correcta: {self.expected_answer}"
+            # ===== MODO NORMAL (todas las demás categorías) =====
+            self.current_word_en, self.current_word_es = random.choice(self.words_pool)
 
-        self.result_label = ctk.CTkLabel(
+            if self.language_mode == "en":
+                word_to_show = self.current_word_en
+                self.expected_answer = self.current_word_es
+            elif self.language_mode == "es":
+                word_to_show = self.current_word_es
+                self.expected_answer = self.current_word_en
+            else:
+                if random.choice([True, False]):
+                    word_to_show = self.current_word_en
+                    self.expected_answer = self.current_word_es
+                else:
+                    word_to_show = self.current_word_es
+                    self.expected_answer = self.current_word_en
+            functionalities.build_normal_question(self, word_to_show)
+
+            # ===== CONTADOR INFERIOR =====
+            widgets.statistics_section(self)
+
+
+
+
+    def show_final_results(self):
+        from . import functionalities
+        functionalities.clear_right_panel(self)
+
+        if self.category_mode == "List of Irregular Verbs" and self.irregular_mode == "grouped":
+            score_percentage = (self.score_points / self.total_rounds) * 100
+        else:
+            score_percentage = (self.correct_count / self.total_rounds) * 100
+
+        ctk.CTkLabel(
             self.right_panel,
-            text=result_text,
-            font=ctk.CTkFont(size=18)
-        )
-        self.result_label.pack(pady=20)
+            text="RESULTADOS FINALES",
+            font=ctk.CTkFont(size=30, weight="bold")
+        ).pack(pady=40)
 
-        # siguiente palabra después de 1 segundo
-        self.after(1000, self.start_game_screen)
+        ctk.CTkLabel(
+            self.right_panel,
+            text=f"Total palabras: {self.total_rounds}",
+            font=ctk.CTkFont(size=18)
+        ).pack(pady=5)
+
+        ctk.CTkLabel(
+            self.right_panel,
+            text=f"Correctas: {self.correct_count}",
+            font=ctk.CTkFont(size=18)
+        ).pack(pady=5)
+
+        ctk.CTkLabel(
+            self.right_panel,
+            text=f"Incorrectas: {self.incorrect_count}",
+            font=ctk.CTkFont(size=18)
+        ).pack(pady=5)
+
+        ctk.CTkLabel(
+            self.right_panel,
+            text=f"Puntaje: {score_percentage:.2f}%",
+            font=ctk.CTkFont(size=22, weight="bold")
+        ).pack(pady=20)
+
+        # Reiniciar botón
+        ctk.CTkButton(
+            self.right_panel,
+            text="Volver al inicio",
+            command=self.reset_game
+        ).pack(pady=20)
+
+    def reset_game(self):
+        # borrar variables del juego
+        for attr in ["total_rounds", "current_round",
+                    "correct_count", "incorrect_count",
+                    "words_pool"]:
+            if hasattr(self, attr):
+                delattr(self, attr)
+
+        self.build_right_panel_lan()
+
+
+
 
 
 
