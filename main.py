@@ -1,10 +1,8 @@
 import random
 from data import learning_english, dict_select_lang, dict_select_diff, dict_select_diff_text, dict_select_ctg
 import messages
-from utils import limpiar_consola
 from categories import choosen_category, extract_deep_categories
 from language import according_language
-from stats import results
 
 import os
 import customtkinter as ctk
