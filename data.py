@@ -1,10 +1,33 @@
-dict_select_lang = {0: "Aleatorio", 1:"Ingles", 2:"Español"}
+levels = [
+    ("Escoger cantidad", "custom"),
+    ("A1 (500–1000 palabras)", "A1"),
+    ("A2 (1000–2000 palabras)", "A2"),
+    ("B1 (2000–3500 palabras)", "B1"),
+    ("B2 (4000–6000 palabras)", "B2"),
+    ("C1 (6000–8000 palabras)", "C1"),
+    ("C2 (+10000 palabras)", "C2"),
+]
 
-dict_select_diff = {0:0, 1:range(500, 1000, 20), 2:range(1000, 2000, 20), 3:range(2000, 3500, 20), 4:range(4000, 6000, 20), 5:range(6000, 8000, 20), 6:range(10000, 15000, 20)}
+categories = [
+    "Aleatorio",
+    "Family",
+    "Relations",
+    "Work Environment",
+    "Characteristics of People",
+    "Emotions",
+    "Personality Traits",
+    "Parts of the Body",
+    "Clothes and Shoes",
+    "Parts of the House",
+    "Household Items",
+    "Questions",
+    "Pronouns and Possessives",
+    "Determiners and Pronouns",
+    "List of Irregular Verbs",
+]
 
-dict_select_diff_text = {0:"Aleatorio", 1:"A1", 2:"A2", 3:"B1", 4:"B2", 5:"C1", 6:"C2"}
+levels_map = {"A1": range(500, 1000, 20), "A2": range(1000, 2000, 20), "B1": range(2000, 3500, 20), "B2": range(4000, 6000, 20), "C1": range(6000, 8000, 20), "C2": range(10000, 15000, 20),}
 
-dict_select_ctg = {0: 'Aleatorio'}
 
 
 

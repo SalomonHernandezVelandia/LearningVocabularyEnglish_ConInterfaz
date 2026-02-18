@@ -4,7 +4,7 @@ from . import widgets
 from . import functionalities
 
 import random
-from data import learning_english
+from data import learning_english, levels, categories, levels_map
 
 
 
@@ -131,15 +131,6 @@ class StartScreen(ctk.CTkFrame):
         self.buttons_frame = ctk.CTkFrame(self.right_panel, fg_color="transparent")
         self.buttons_frame.pack(padx=200, fill="x")
 
-        levels = [
-            ("Escoger cantidad", "custom"),
-            ("A1 (500–1000 palabras)", "A1"),
-            ("A2 (1000–2000 palabras)", "A2"),
-            ("B1 (2000–3500 palabras)", "B1"),
-            ("B2 (4000–6000 palabras)", "B2"),
-            ("C1 (6000–8000 palabras)", "C1"),
-            ("C2 (+10000 palabras)", "C2"),
-        ]
         for text, value in levels:
             ctk.CTkButton(
                 self.buttons_frame,
@@ -164,23 +155,6 @@ class StartScreen(ctk.CTkFrame):
         self.categories_frame = ctk.CTkFrame(self.right_panel, fg_color="transparent")
         self.categories_frame.pack(padx=120, fill="x")
 
-        categories = [
-            "Aleatorio",
-            "Family",
-            "Relations",
-            "Work Environment",
-            "Characteristics of People",
-            "Emotions",
-            "Personality Traits",
-            "Parts of the Body",
-            "Clothes and Shoes",
-            "Parts of the House",
-            "Household Items",
-            "Questions",
-            "Pronouns and Possessives",
-            "Determiners and Pronouns",
-            "List of Irregular Verbs",
-        ]
         for category in categories:
             ctk.CTkButton(
                 self.categories_frame,
@@ -217,15 +191,9 @@ class StartScreen(ctk.CTkFrame):
             if self.level_mode == "custom":
                 self.total_rounds = self.custom_amount
             else:
-                levels_map = {
-                    "A1": 500,
-                    "A2": 1000,
-                    "B1": 2000,
-                    "B2": 4000,
-                    "C1": 6000,
-                    "C2": 10000,
-                }
-                self.total_rounds = levels_map.get(self.level_mode, 10)
+                level_range = levels_map.get(self.level_mode, range(10, 20))
+                self.total_rounds = random.choice(level_range)
+
             self.current_round = 0
             self.correct_count = 0
             self.incorrect_count = 0
