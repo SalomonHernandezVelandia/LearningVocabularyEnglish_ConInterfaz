@@ -1,7 +1,6 @@
 import random
 from data import learning_english
 import messages
-# from categories import choosen_category, extract_deep_categories
 
 import os
 import customtkinter as ctk

@@ -1,6 +1,8 @@
 import customtkinter as ctk
 import messages
 from . import widgets
+import random
+
 
 
 # ========================================================================================================================
@@ -154,7 +156,7 @@ def check_answer(self):
         self.incorrect_count += 1
         result_text = f"❌ Incorrecto (Correcta: {self.expected_answer})"
         self.horizontal_frame.configure(fg_color="#E74C3C")  
-        delay = 1500 
+        delay = 2000 
 
     self.result_label = ctk.CTkLabel(
         self.right_panel,
@@ -200,6 +202,24 @@ def check_grouped_answers(self):
 
     self.after(delay, self.start_game_screen)
 
+
+
+def get_limited_random_word(self):
+    # Filtrar palabras que han aparecido menos de 2 veces
+    available_words = [
+        word for word in self.words_pool
+        if self.word_usage.get(word, 0) < 2
+    ]
+    # Si ya todas aparecieron 2 veces, reiniciar contador
+    if not available_words:
+        self.word_usage = {}
+        available_words = self.words_pool
+    chosen = random.choice(available_words)
+
+    # Incrementar contador
+    self.word_usage[chosen] = self.word_usage.get(chosen, 0) + 1
+
+    return chosen
 
 
 

@@ -198,6 +198,7 @@ class StartScreen(ctk.CTkFrame):
             self.correct_count = 0
             self.incorrect_count = 0
             self.score_points = 0
+            self.word_usage = {} 
 
             # ===== EXTRAER PALABRAS =====
             if self.category_mode == "List of Irregular Verbs":
@@ -226,7 +227,7 @@ class StartScreen(ctk.CTkFrame):
         self.current_round += 1
 
         if self.category_mode == "List of Irregular Verbs" and self.irregular_mode == "random":
-            self.current_word_en, self.current_word_es = random.choice(self.words_pool)
+            self.current_word_en, self.current_word_es = functionalities.get_limited_random_word(self)
             if self.language_mode == "en":
                 word_to_show = self.current_word_en
                 self.expected_answer = self.current_word_es
@@ -249,7 +250,7 @@ class StartScreen(ctk.CTkFrame):
             widgets.titulo(self, messages.titulo)
             widgets.message_start(self, messages.msg6)
         
-            verb_dict = random.choice(self.words_pool)
+            verb_dict = functionalities.get_limited_random_word(self)
             self.expected_answers = []
 
             self.group_frame = ctk.CTkFrame(self.right_panel)
@@ -293,7 +294,7 @@ class StartScreen(ctk.CTkFrame):
             widgets.statistics_section(self)
         else:
             # ===== MODO NORMAL (todas las demás categorías) =====
-            self.current_word_en, self.current_word_es = random.choice(self.words_pool)
+            self.current_word_en, self.current_word_es = functionalities.get_limited_random_word(self)
 
             if self.language_mode == "en":
                 word_to_show = self.current_word_en
