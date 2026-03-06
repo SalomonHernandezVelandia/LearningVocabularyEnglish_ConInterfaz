@@ -155,13 +155,22 @@ class StartScreen(ctk.CTkFrame):
         self.categories_frame = ctk.CTkFrame(self.right_panel, fg_color="transparent")
         self.categories_frame.pack(padx=120, fill="x")
 
-        for category in categories:
-            ctk.CTkButton(
+        for i, category in enumerate(categories):
+            row = i // 2
+            col = i % 2
+
+            btn = ctk.CTkButton(
                 self.categories_frame,
                 text=category,
-                font=ctk.CTkFont(size=14),
+                font=ctk.CTkFont(size=15),
                 command=lambda c=category: functionalities.select_category_mode(self, c)
-            ).pack(fill="x", pady=4)
+            )
+
+            btn.grid(row=row, column=col, padx=10, pady=6, sticky="ew")
+
+        # Hace que ambas columnas se expandan igual
+        self.categories_frame.grid_columnconfigure(0, weight=1)
+        self.categories_frame.grid_columnconfigure(1, weight=1)
 
 
     def build_irregular_options_screen(self):

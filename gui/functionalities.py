@@ -98,9 +98,7 @@ def confirm_custom_amount(self):
 # ========================================================================================================================
 def select_category_mode(self, category):
     self.category_mode = category
-    self.category_info_label.configure(
-        text=f"Categoría seleccionada: {category}"
-    )
+    self.category_info_label.configure(text=f"Categoría seleccionada: {category}")
 
     if category == "List of Irregular Verbs":
         self.after(1000, self.build_irregular_options_screen)
@@ -156,7 +154,7 @@ def check_answer(self):
         self.incorrect_count += 1
         result_text = f"❌ Incorrecto (Correcta: {self.expected_answer})"
         self.horizontal_frame.configure(fg_color="#E74C3C")  
-        delay = 2000 
+        delay = 3000 
 
     self.result_label = ctk.CTkLabel(
         self.right_panel,
