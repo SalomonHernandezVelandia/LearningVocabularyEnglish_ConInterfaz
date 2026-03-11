@@ -24,6 +24,7 @@ categories = [
     'Musical Instruments',
     "Questions",
     "Pronouns and Possessives",
+    'Adjectives',
     "Determiners and Pronouns",
     "List of Irregular Verbs",
 ]
@@ -51,6 +52,7 @@ learning_english = {'Family':                   {'Grandfather':'Abuelo', 'Grandm
                                                  {'Possessive Adjectives': 'Adjetivos Posesivos','My':'Mi',    'Your':'Tu', 'His':'Su', 'Her':'Su',     'Its':'Su', 'Our':'Nuestro', 'Your_2':'Vuestro','Their':'Sus' },
                                                  {'Possessives Pronouns': 'Pronombres Posesivos','Mine':'Mio', 'Yours':'Tuyo',  'His':'Suyo',   'Hers':'Suya',      'Ours':'Nuestros', 'Theirs':'Suyos'},
                                                  {'Reflexive Pronouns': 'Pronombres Reflexivos', 'Myself':'Yo Mismo'} ],
+                    'Adjectives':               {'Good':'Bueno', 'Bad':'Malo', 'High':'Alto', 'Low':'Bajo', 'Easy':'Facil', 'Hard':'Duro', 'Difficult':'Dificil', 'Heavy':'Pesado', 'Light':'Ligero', 'Expensive':'Caro', 'Cheap':'Barato', 'Hot':'Caliente', 'Cold':'Frio', 'Fast':'Rapido', 'Slow':'Lento', 'Early':'Temprano', 'Late':'Tarde', 'Right':'Bien', 'Correct':'Correcto', 'Wrong':'Equivocado', 'Full':'Lleno', 'Empty':'Vacio', 'Buzy':'Ocupado', 'Free':'Libre', 'Wide':'Ancho', 'Narrow':'Estrecho', 'Thick':'Grueso', 'Thin':'Delgado', 'Deep':'Profundo', 'Shallow':'Poco Profundo', 'Clean':'Limpio', 'Dirty':'Sucio', 'Different':'Diferente', 'Similar':'Similar', 'Bright':'Brillante', 'Dark':'Oscuro', 'Smooth':'Liso', 'Rough':'Aspero', 'Soft':'Suave', 'Wet':'Mojado', 'Dry':'Seco', 'Open':'Abierto', 'Closed':'Cerrado', 'Simple':'Simple', 'Complicated':'Complicado', 'Warm':'Calido', 'Cool':'Fresco', 'Sunny':'Soleado', 'Cloudy':'Nublado', 'Windy':'Ventoso', 'Rainy':'Lluvioso', 'Snowy':'Nevado', 'Thirsty':'Sediento', 'Hungry':'Hambriento', 'Ready':'Listo', 'Next':'Proximo', 'Single':'Soltero', 'Married':'Casado', 'American':'Americano', 'European':'Europeo', 'Asian':'Asiatico', 'African':'Africano', 'Alive':'Vivo', 'Dead':'Muerto', 'Modern':'Moderno', 'Ancient':'Antiguo'},
                     'Determiners and Pronouns': [{'Demonstrative Determiners':'Determinantes Demostrativos',   'This':'Esto',   'That':'Eso',   'These':'Estos',    'Those':'Esos'},
                                                  {'Distributive Determinants':'Determinantes Distributivos',   'All':'Todo',    'Both':'Ambos', 'Each':'Cada (Uno)','Every':'Cada (Varios)',  'Half':'Mitad',   'Either':'Cualquiera',  'Neither':'Ninguno'},
                                                  {'Cuantifying Determinants':'Determinantes Cuantificadores',  'Much':'Mucho',  'Many':'Muchos','Few':'Pocos',      'Little':'Poco',    'Enough':'Suficiente',  'Plenty':'Abundante',   'Some':'Algunos',   'Most':'Mayoria'},
