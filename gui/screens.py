@@ -153,11 +153,11 @@ class StartScreen(ctk.CTkFrame):
 
         # ===== BOTONES DE CATEGORÍA =====
         self.categories_frame = ctk.CTkFrame(self.right_panel, fg_color="transparent")
-        self.categories_frame.pack(padx=120, fill="x")
+        self.categories_frame.pack(padx=50, fill="x")
 
         for i, category in enumerate(categories):
-            row = i // 2
-            col = i % 2
+            row = i // 3
+            col = i % 3
 
             btn = ctk.CTkButton(
                 self.categories_frame,
