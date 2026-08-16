@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive English vocabulary trainer." >
+
+    <title>English Vocabulary Trainer</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <main class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <h2 class="sidebar__title" id="options-title"> </h2>
+            </div>
+
+            <!-- LANGUAGE -->
+            <section class="option">
+                <p class="option__status" id="language-status"> </p>
+                <button class="option__button" id="language-button" type="button"> </button>
+            </section>
+
+            <!-- LEVEL -->
+            <section class="option">
+                <p class="option__status" id="level-status"> </p>
+                <button class="option__button" id="level-button" type="button"> </button>
+            </section>
+
+            <!-- CATEGORY -->
+            <section class="option">
+                <p class="option__status" id="category-status"> </p>
+                <button class="option__button" id="category-button" type="button"> </button>
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="stats-card">
+                <div class="stats-card__header">
+                    <span>📊</span>
+                    <span id="score-title"> </span>
+                </div>
+
+                <div class="progress">
+                    <div class="progress__bar" id="progress-bar"> </div>
+                </div>
+
+                <p class="stats-card__progress" id="progress-text"> </p>
+
+                <div class="stats-card__data">
+                    <p class="stats-card__correct" id="correct-count"> </p>
+                    <p class="stats-card__incorrect" id="incorrect-count"> </p>
+                    <p id="round-count"> </p>
+                </div>
+            </section>
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="main-content">
+            <header class="main-content__header">
+
+                <!-- INTERFACE LANGUAGE -->
+                <div class="interface-language">
+                    <span class="interface-language__label" id="interface-language-label" > </span>
+
+                    <div class="interface-language__buttons">
+                        <button class="interface-language__button" type="button" data-interface-language="en" aria-label="English interface">
+                            EN
+                        </button>
+                        <button class="interface-language__button" type="button" data-interface-language="es" aria-label="Spanish interface">
+                            ES
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TITLE -->
+                <h1 id="app-title"></h1>
+                <p class="main-content__message" id="main-message"> </p>
+            </header>
+
+            <!-- DYNAMIC CONTENT -->
+            <div class="game-content" id="game-content">
+                <!-- LANGUAGE SELECTION                            -->
+                <div class="practice-step" id="language-selection">
+                    <div class="language-options">
+                        <button class="button button--primary" type="button" data-language="random"> </button>
+                        <button class="button button--primary" type="button" data-language="en"> </button>
+                        <button class="button button--primary" type="button" data-language="es"> </button>
+                    </div>
+                </div>
+
+                <!-- LEVEL SELECTION                              -->
+                <div class="practice-step" id="level-selection" hidden>
+                    <div class="level-options" id="level-options"> </div>
+                    <!-- CUSTOM WORD COUNT -->
+                    <div class="custom-amount" id="custom-amount" hidden>
+                        <label class="custom-amount__label" id="custom-amount-label" for="custom-amount-input"> </label>
+                        <input class="custom-amount__input" id="custom-amount-input" type="number" min="1" step="1">
+                        <button class="button button--primary" id="custom-amount-continue" type="button"> </button>
+                    </div>
+                </div>
+
+                <!-- CATEGORY SELECTION -->
+                <div class="practice-step" id="category-selection" hidden>
+                    <div class="category-options" id="category-options"> </div>
+                </div>
+
+                <!-- VOCABULARY PRACTICE                     -->
+                <div class="practice-step" id="vocabulary-practice" hidden>
+                    <div class="question">
+                        <p class="question__progress" id="question-progress"> </p>
+                        <h2 class="question__word" id="question-word"> </h2>
+                        <div class="answer">
+                            <input class="answer-input" id="answer-input" type="text" autocomplete="off">
+                            <button class="button button--primary" id="answer-button" type="button"> </button>
+                        </div>
+                        <p class="answer-feedback" id="answer-feedback"> </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/practice.js"></script>
+</body>
+
+
+</html>

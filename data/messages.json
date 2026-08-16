@@ -1,0 +1,100 @@
+{
+    "default_language": "en",
+
+    "en": {
+        "title": "LEARNING ENGLISH USING PYTHON",
+
+        "options": "Options",
+        "interface_language": "Interface language",
+
+        "language": "Language",
+        "level": "Level",
+        "category": "Category",
+
+        "selected_language": "Selected language: —",
+        "selected_level": "Selected level or number of words: —",
+        "selected_category": "Selected category: —",
+
+        "score": "Score",
+        "progress": "Progress",
+        "correct": "Correct",
+        "incorrect": "Incorrect",
+        "word": "Word",
+
+        "random": "Random",
+        "english": "English",
+        "spanish": "Spanish",
+
+        "language_selection": "To start practicing, select the language in which you want to receive the words. If you choose English, the words will appear in English and you will have to enter their Spanish translation:",
+
+        "level_selection": "Select the English level you want to challenge yourself with. If you prefer to work with a predetermined number of words, choose the first option:",
+
+        "category_selection": "Select the category you want to practice. If you want words from any category, choose 'Random':",
+
+        "irregular_verbs_selection": "For the irregular verbs list, choose how you want the different verb forms to be displayed:",
+
+        "translation_input": "Enter the translated word:",
+
+        "verb_forms_input": "Enter the words in their different verb forms:",
+
+        "translation_instructions": "Enter the translation of the word, keeping the following in mind:\n- If an English number appears and you need to enter it in Spanish, enter only the number in decimal format and enclose it in quotation marks \"\"\n- Repeated English words have the following additional characters to distinguish them in the dictionaries: Infinitive = \" (I)\", Past Simple = \" (PS)\", Past Participle = \" (PP)\"\n- If you want to exit, type (Q)...",
+    
+        "choose_amount": "Choose amount",
+        "word_count_label": "Enter the number of words:",
+        "continue": "Continue",
+        "invalid_amount": "Please enter a valid number of words.",
+
+        "next": "Next",
+        "correct_answer": "Correct answer:",
+
+        "question": "Question"
+    },
+
+    "es": {
+        "title": "APRENDIENDO INGLÉS USANDO PYTHON",
+
+        "options": "Opciones",
+        "interface_language": "Idioma de la interfaz",
+
+        "language": "Idioma",
+        "level": "Nivel",
+        "category": "Categoría",
+
+        "selected_language": "Idioma seleccionado: —",
+        "selected_level": "Nivel o cantidad de palabras seleccionadas: —",
+        "selected_category": "Categoría seleccionada: —",
+
+        "score": "Puntaje",
+        "progress": "Progreso",
+        "correct": "Correctas",
+        "incorrect": "Incorrectas",
+        "word": "Palabra",
+
+        "random": "Aleatorio",
+        "english": "Inglés",
+        "spanish": "Español",
+
+        "language_selection": "Para iniciar la práctica, selecciona el idioma en el que deseas recibir las palabras, es decir, si escoges Inglés, las palabras aparecerán en ese idioma y deberás ingresar su respectiva traducción al Español:",
+
+        "level_selection": "Selecciona el nivel de Inglés con el que deseas retarte, si prefieres trabajar con un número de palabras predeterminado, elige la primera opción:",
+
+        "category_selection": "Selecciona la categoría que quieres practicar. En caso de que quieras palabras de cualquier categoría, escoge 'Aleatorio':",
+
+        "irregular_verbs_selection": "Para el listado de verbos irregulares, escoge el modo en que quieres que aparezcan las diferentes palabras:",
+
+        "translation_input": "Digita la palabra traducida:",
+
+        "verb_forms_input": "Digita las palabras en sus diferentes tiempos verbales:",
+
+        "translation_instructions": "Digita la traducción de la palabra teniendo en cuenta:\n- Si sale un número en inglés para ponerlo en español, solo pon el número en decimales y entre comillas \"\"\n- Las palabras en inglés repetidas tendrán los siguientes caracteres extra para marcar una diferencia en los diccionarios: Infinitive = \" (I)\", Past Simple = \" (PS)\", Past Participle = \" (PP)\"\n- Si quieres salir, digita (Q)...",
+        
+        "choose_amount": "Escoger cantidad",
+        "word_count_label": "Digita el número de palabras:",
+        "continue": "Continuar",
+        "invalid_amount": "Por favor, digita un número válido de palabras.",
+
+        "next": "Siguiente",
+        "correct_answer": "Respuesta correcta:",
+        "question": "Pregunta"    
+    }
+}
