@@ -1,47 +1,37 @@
 @use "variables" as *;
 
+
 .sidebar__header {
     text-align: center;
-
     margin-bottom: 25px;
 }
 
 .sidebar__title {
-    font-size: 1.1rem;
+    font-size: 20px;
     font-weight: 700;
 }
 
 
-// ============================================
 // OPTIONS
-// ============================================
-
 .option {
     margin-bottom: 22px;
 }
 
 .option__status {
     margin-bottom: 4px;
-
-    font-size: 0.85rem;
+    font-size: 16px;
     color: $text-secondary;
-
     text-align: left;
-
     overflow-wrap: break-word;
 }
 
 .option__button {
     width: 100%;
-
     padding: 10px 14px;
-
     border: none;
     border-radius: $radius-sm;
-
     background: $orange;
     color: $text-primary;
-
     transition:
         background $transition-normal,
         transform $transition-fast;

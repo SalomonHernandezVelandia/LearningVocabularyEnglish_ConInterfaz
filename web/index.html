@@ -112,25 +112,58 @@
                     <div class="category-options" id="category-options"> </div>
                 </div>
 
+                <!-- IRREGULAR VERBS SELECTION -->
+                <div class="practice-step" id="irregular-verbs-selection" hidden>
+                    <div class="irregular-verbs-options" id="irregular-verbs-options">
+                        <button class="button button-category" type="button" data-irregular-mode="random">
+                            Irregular Verbs Random
+                        </button>
+
+                        <button class="button button-category" type="button" data-irregular-mode="tenses">
+                            Irregular Verbs by Tenses
+                        </button>
+                    </div>
+                </div>
+
                 <!-- VOCABULARY PRACTICE                     -->
                 <div class="practice-step" id="vocabulary-practice" hidden>
                     <div class="question">
-                        <p class="question__progress" id="question-progress"> </p>
-                        <h2 class="question__word" id="question-word"> </h2>
-                        <div class="answer">
-                            <input class="answer-input" id="answer-input" type="text" autocomplete="off">
-                            <button class="button button--primary" id="answer-button" type="button"> </button>
+                        <p class="question__progress" id="question-progress"></p>
+                        <div class="question__body">
+                            <h2 class="question__word" id="question-word"></h2>
+                            <!-- ANSWER -->
+                            <div class="answer">
+                                <input class="answer-input" id="answer-input" type="text" autocomplete="off">
+                                <button class="button button-ans" id="answer-button" type="button"></button>
+                            </div>
                         </div>
+                        <!-- FEEDBACK -->
                         <p class="answer-feedback" id="answer-feedback"> </p>
+                        <!-- SUBMIT BUTTON -->
+                        <button class="button button-ans" id="irregular-answer-button" type="button"> </button>
                     </div>
                 </div>
-                
+                <!-- IRREGULAR VERBS BY TENSES PRACTICE -->
+                <div class="practice-step" id="irregular-tenses-practice" hidden>
+                    <div class="question">
+                        <p class="question__progress" id="irregular-question-progress"></p>
+                        <div class="irregular-tenses-grid" id="irregular-tenses-grid"></div>
+                        <p class="answer-feedback" id="irregular-answer-feedback"> </p>
+                        <button class="button button-ans" id="irregular-answer-button" type="button"> </button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/category.js"></script>
     <script src="js/practice.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 

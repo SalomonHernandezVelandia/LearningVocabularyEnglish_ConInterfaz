@@ -47,7 +47,8 @@
         "next": "Next",
         "correct_answer": "Correct answer:",
 
-        "question": "Question"
+        "question": "Question",
+        "words": "words"
     },
 
     "es": {
@@ -95,6 +96,7 @@
 
         "next": "Siguiente",
         "correct_answer": "Respuesta correcta:",
-        "question": "Pregunta"    
+        "question": "Pregunta",    
+        "words": "palabras"
     }
 }
