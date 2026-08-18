@@ -1,21 +1,22 @@
-# Proyecto aprendizaje del Vocabulario Ingles con Python
+# English Vocabulary Learning
 
 <a name="top"></a>
 
-[![.NET](https://img.shields.io/badge/.NET-8.0%2C%209.0%2C%2010.0-512BD4)](https://docs.abblix.com/docs/technical-requirements)
-[![language](https://img.shields.io/badge/language-C%23-239120)](https://learn.microsoft.com/ru-ru/dotnet/csharp/tour-of-csharp/overview)
-[![OS](https://img.shields.io/badge/OS-linux%2C%20windows%2C%20macOS-0078D4)](https://docs.abblix.com/docs/technical-requirements)
-[![CPU](https://img.shields.io/badge/CPU-x86%2C%20x64%2C%20ARM%2C%20ARM64-FF8C00)](https://docs.abblix.com/docs/technical-requirements)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![SCSS](https://img.shields.io/badge/SCSS-CF649A?logo=sass&logoColor=white)](https://sass-lang.com/)
+[![OOP](https://img.shields.io/badge/OOP-Object--Oriented%20Programming-6A5ACD)](#)
+[![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)](https://git-scm.com/)
+[![JSON](https://img.shields.io/badge/JSON-000000?logo=json&logoColor=white)](https://www.json.org/)
+[![CustomTkinter](https://img.shields.io/badge/CustomTkinter-2E86C1)](https://github.com/TomSchimansky/CustomTkinter)
 
-
-
-# English Vocabulary Trainer
 
 An interactive English vocabulary practice application designed to make vocabulary learning more dynamic and engaging.
 
-The application allows users to practice English vocabulary through different languages, proficiency levels, categories, and learning modes. It also includes a dedicated practice mode for irregular verbs.
+The application allows users to practice English vocabulary through different languages, proficiency levels, categories, and learning modes. 
 
-The project was originally developed as a Python desktop application using CustomTkinter and is being extended with a web version so that the application can be accessed directly from a browser.
+The project was originally developed as a Python desktop application using CustomTkinter and it was extended with a web version so that the application can be accessed directly from a browser
 
 ## Features
 
@@ -180,17 +181,6 @@ A browser-based version is being developed to make the application accessible wi
 
 The web version will preserve the main learning concepts of the desktop application while adapting the interface and interaction model to the browser.
 
-## Project Goals
-
-The main goals of the project are:
-
-1. Build a practical tool for English vocabulary practice.
-2. Strengthen Python programming skills.
-3. Practice data structures and dictionary manipulation.
-4. Apply object-oriented programming principles.
-5. Separate application data from interface and business logic.
-6. Develop a browser-based version of the application.
-7. Create an accessible interactive learning tool that can be demonstrated directly from a portfolio.
 
 ## Future Improvements
 
@@ -219,29 +209,4 @@ Multimedia Engineering — Universidad Militar Nueva Granada.
 This project is intended as a personal educational and portfolio project.
 
 
-
-
-## Objetivos
-- ✅ Debe pedir si las palabras que se mostraran seran en ingles, español o aleatorio
-- ✅ Debe pedir si se quiere escoger alguna categoria especial o palabras aleatorias.
-- ✅ Debe dar las opciones de elegir un reto o meta, es decir cierta cantidad de palabras que entregara.
-- ✅ Debe haber un conteo, promedio y operaciones matematicas que al finalizar el reto me permitan determinar cuantas hubo correctas y de una calificacion de que nivel de ingles tengo.
-- ✅ Segun las elecciones debe mostrarme una palabra aleatoria presente en el diccionario, sea ingles o español, y debo poder digitar la palabra en su traduccion, si la palabra es incorrecta vuelve a repetir o mostrar 
-  la misma hasta que la escriba de forma correcta.
-- Si la palabra traducida es correcta (presente en el diccionario) me entrega otra nueva palabra aleatoria.
-- Debo poner por medio de teclas que me permita terminar terminar la ejecucion del programa, que me permita cambiar el idioma principal y que me permita cambiar la categoria en caso de desearlo.
-
-
-## Atajos
-- :Q  salir
-- :L  cambiar idioma
-- :C  cambiar categoría
-- :R  repetir palabra
-- :S  ver estadísticas
-
-
-
-## 🚀 About
-...
-
-sass --watch scss/style.scss:css/style.css
+<!-- sass --watch scss/style.scss:css/style.css -->

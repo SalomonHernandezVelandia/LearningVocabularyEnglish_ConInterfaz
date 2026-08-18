@@ -25,13 +25,19 @@
     overflow-wrap: break-word;
 }
 
+.option__selected {
+    color: $orange;
+    font-weight: 600;
+}
+
 .option__button {
     width: 100%;
     padding: 10px 14px;
     border: none;
     border-radius: $radius-sm;
     background: $orange;
-    color: $text-primary;
+    color: $text-dark;
+    font-weight: 700;
     transition:
         background $transition-normal,
         transform $transition-fast;
@@ -43,4 +49,23 @@
 
 .option__button:active {
     transform: scale(0.98);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .sidebar__header {
+        margin-bottom: 15px;
+    }
+
+    .option {
+        display: grid;
+        grid-template-columns: 5fr 3fr;
+        margin-bottom: 10px;
+    }
+    
+    .option__button {
+        height: 40px;
+    }
 }

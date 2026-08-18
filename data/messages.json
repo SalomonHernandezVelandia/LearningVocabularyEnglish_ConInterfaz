@@ -2,7 +2,7 @@
     "default_language": "en",
 
     "en": {
-        "title": "LEARNING ENGLISH USING PYTHON",
+        "title": "LEARNING VOCABULARY ENGLISH-SPANISH",
 
         "options": "Options",
         "interface_language": "Interface language",
@@ -52,7 +52,7 @@
     },
 
     "es": {
-        "title": "APRENDIENDO INGLÉS USANDO PYTHON",
+        "title": "APRENDIENDO VOCABULARIO INGLÉS-ESPAÑOL",
 
         "options": "Opciones",
         "interface_language": "Idioma de la interfaz",

@@ -107,7 +107,6 @@ function updateLevelStatus() {
     if (state.levelMode === "custom") {
         selectedValue = `${state.customAmount} ${lang.words}`;
     }
-    // PREDEFINED LEVEL
     else {
         const selectedLevel =
             levels?.levels?.find(
@@ -116,20 +115,20 @@ function updateLevelStatus() {
             );
 
         if (selectedLevel) {
-            selectedValue = `${selectedLevel.id} — ${state.customAmount} ${lang.words}`;
+            selectedValue =
+                `${selectedLevel.id} — ${state.customAmount} ${lang.words}`;
         }
         else {
             selectedValue = "—";
         }
     }
 
-    // UPDATE SIDEBAR
-    document.getElementById(
-        "level-status"
-    ).textContent =
+    const status = document.getElementById("level-status");
+
+    status.innerHTML =
         lang.selected_level.replace(
             "—",
-            selectedValue
+            `<span class="option__selected">${selectedValue}</span>`
         );
 }
 

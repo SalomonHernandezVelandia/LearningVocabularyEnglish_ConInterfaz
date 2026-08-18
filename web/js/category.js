@@ -162,13 +162,13 @@ function selectIrregularVerbMode(mode) {
 // ==========================================================
 function updateCategoryStatus() {
     const lang = getCurrentMessages();
-    let selectedValue = state.categoryMode || "—";
+    const selectedValue = state.categoryMode || "—";
 
-    document.getElementById(
-        "category-status"
-    ).textContent =
+    const status = document.getElementById("category-status");
+
+    status.innerHTML =
         lang.selected_category.replace(
             "—",
-            selectedValue
+            `<br><span class="option__selected">${selectedValue}</span>`
         );
 }

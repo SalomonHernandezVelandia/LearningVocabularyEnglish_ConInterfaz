@@ -8,13 +8,13 @@ function initializeLanguageSelection() {
             "[data-language]"
         );
 
-
     buttons.forEach(button => {
         button.addEventListener(
             "click",
             () => {
                 const language =
                     button.dataset.language;
+
                 selectLanguage(language);
             }
         );
@@ -37,32 +37,26 @@ function selectLanguage(language) {
 // ==========================================================
 function updateLanguageStatus() {
     const lang = getCurrentMessages();
-    let selectedText;
+    let selectedValue;
+
     if (state.languageMode === "random") {
-        selectedText =
-            lang.selected_language.replace(
-                "—",
-                lang.random
-            );
+        selectedValue = lang.random;
     }
-    else if (
-        state.languageMode === "en"
-    ) {
-        selectedText =
-            lang.selected_language.replace(
-                "—",
-                lang.english
-            );
+    else if (state.languageMode === "en") {
+        selectedValue = lang.english;
     }
     else {
-        selectedText =
-            lang.selected_language.replace(
-                "—",
-                lang.spanish
-            );
+        selectedValue = lang.spanish;
     }
 
-    document.getElementById("language-status").textContent = selectedText;
+    const status =
+        document.getElementById("language-status");
+
+    status.innerHTML =
+        lang.selected_language.replace(
+            "—",
+            `<br><span class="option__selected">${selectedValue}</span>`
+        );
 }
 
 
@@ -78,7 +72,8 @@ function updateLanguageButtons() {
         );
 
     buttons.forEach(button => {
-        const language = button.dataset.language;
+        const language =
+            button.dataset.language;
 
         if (language === "random") {
             button.textContent = lang.random;
