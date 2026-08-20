@@ -19,7 +19,6 @@ const practiceState = {
     incorrectAnswers: 0,
     // IRREGULAR VERBS BY TENSES
     irregularTenseQuestions: [],
-    irregularTenseAttempt: 1,
     irregularTenseAnswered: false
 };
 
@@ -52,11 +51,6 @@ function initializePractice() {
         );
     }
     const answerInput = document.getElementById("answer-input");
-
-    // NORMAL VOCABULARY BUTTON
-    if (answerButton) {
-        answerButton.addEventListener("click", handleAnswer);
-    }
 
     // NORMAL VOCABULARY ENTER
     if (answerInput) {
@@ -121,11 +115,16 @@ function initializePractice() {
 // ==========================================================
 // HANDLE IRREGULAR TENSES ANSWER
 // ==========================================================
+
 function handleIrregularTensesAnswer() {
+
+    // Prevent multiple submissions
     if (practiceState.irregularTenseAnswered) {
         return;
     }
-    const grid = document.getElementById("irregular-tenses-grid");
+
+    const grid =
+        document.getElementById("irregular-tenses-grid");
 
     const inputs =
         [
@@ -134,110 +133,147 @@ function handleIrregularTensesAnswer() {
             )
         ];
 
+    // ======================================================
     // CHECK EMPTY INPUTS
+    // ======================================================
+
     const hasEmptyInput =
         inputs.some(
             input =>
-                !normalizeAnswer(
-                    input.value
-                )
+                !normalizeAnswer(input.value)
         );
 
     if (hasEmptyInput) {
+
         const emptyInput =
             inputs.find(
                 input =>
-                    !normalizeAnswer(
-                        input.value
-                    )
+                    !normalizeAnswer(input.value)
             );
+
         emptyInput.focus();
+
         return;
     }
 
+    // ======================================================
     // CHECK ANSWERS
+    // ======================================================
+
     let allCorrect = true;
+
     inputs.forEach(
         input => {
-            const userAnswer = normalizeAnswer(input.value);
-            const correctAnswer = normalizeAnswer(input.dataset.answer);
+
+            const userAnswer =
+                normalizeAnswer(input.value);
+
+            const correctAnswer =
+                normalizeAnswer(input.dataset.answer);
 
             input.classList.remove(
                 "irregular-tense-input--correct",
                 "irregular-tense-input--incorrect"
             );
 
+            // ==================================================
+            // CORRECT
+            // ==================================================
+
             if (userAnswer === correctAnswer) {
-                input.classList.add("irregular-tense-input--correct");
+
+                input.classList.add(
+                    "irregular-tense-input--correct"
+                );
+
             }
+
+            // ==================================================
+            // INCORRECT
+            // ==================================================
+
             else {
-                input.classList.add("irregular-tense-input--incorrect");
+
+                input.classList.add(
+                    "irregular-tense-input--incorrect"
+                );
+
                 allCorrect = false;
+
+                // Show the correct answer inside the input
+                input.value = input.dataset.answer;
             }
+
+            // Disable all inputs after submitting
+            input.disabled = true;
         }
     );
 
+    // ======================================================
+    // MARK QUESTION AS ANSWERED
+    // ======================================================
+
+    practiceState.irregularTenseAnswered = true;
+
+    // ======================================================
     // ALL CORRECT
+    // ======================================================
+
     if (allCorrect) {
-        practiceState.irregularTenseAnswered = true;
+
         practiceState.correctAnswers++;
+
         updatePracticeStats();
+
         showIrregularTensesCorrectFeedback();
 
-        const button = document.getElementById("irregular-answer-button");
+        const button =
+            document.getElementById(
+                "irregular-answer-button"
+            );
+
         button.disabled = true;
 
         // 1 SECOND
         setTimeout(
             () => {
+
                 button.disabled = false;
+
                 nextIrregularTenseQuestion();
+
             },
             1000
         );
+
         return;
     }
 
-    // FIRST ATTEMPT
-    if (practiceState.irregularTenseAttempt === 1) {
-        practiceState.irregularTenseAttempt = 2;
-        showIrregularTensesRetryFeedback();
-        // ENABLE ONLY INCORRECT INPUTS
-        inputs.forEach(
-            input => {
-                const isCorrect = input.classList.contains("irregular-tense-input--correct");
-                input.disabled = isCorrect;
-            }
+    // ======================================================
+    // INCORRECT ANSWER
+    // ======================================================
+
+    practiceState.incorrectAnswers++;
+
+    updatePracticeStats();
+
+    showIrregularTensesIncorrectFeedback();
+
+    const button =
+        document.getElementById(
+            "irregular-answer-button"
         );
 
-        // FOCUS FIRST INCORRECT
-        const incorrectInput =
-            inputs.find(
-                input =>
-                    input.classList.contains(
-                        "irregular-tense-input--incorrect"
-                    )
-            );
-        if (incorrectInput) {
-            incorrectInput.focus();
-        }
-
-        return;
-    }
-
-    // SECOND ATTEMPT FAILED
-    practiceState.irregularTenseAnswered = true;
-    practiceState.incorrectAnswers++;
-    updatePracticeStats();
-    showIrregularTensesIncorrectFeedback();
-    const button = document.getElementById("irregular-answer-button");
     button.disabled = true;
 
     // 3 SECONDS
     setTimeout(
         () => {
+
             button.disabled = false;
+
             nextIrregularTenseQuestion();
+
         },
         3000
     );
@@ -251,38 +287,47 @@ function showIrregularTensesCorrectFeedback() {
     feedback.className = "answer-feedback answer-feedback--correct";
 }
 
-// RETRY FEEDBACK
-function showIrregularTensesRetryFeedback() {
-    const feedback = document.getElementById("irregular-answer-feedback");
-    const lang = getCurrentMessages();
-    feedback.textContent = `✗ ${lang.incorrect} — Try again`;
-    feedback.className = "answer-feedback answer-feedback--incorrect";
-}
-
 // INCORRECT FEEDBACK
 function showIrregularTensesIncorrectFeedback() {
-    const feedback = document.getElementById("irregular-answer-feedback");
-    const lang = getCurrentMessages();
-    const inputs = document.querySelectorAll(".irregular-tense-input");
+
+    const feedback =
+        document.getElementById(
+            "irregular-answer-feedback"
+        );
+
+    const lang =
+        getCurrentMessages();
+
+    const inputs =
+        document.querySelectorAll(
+            ".irregular-tense-input"
+        );
+
     const corrections = [];
 
     inputs.forEach(
         input => {
-            const userAnswer = normalizeAnswer(input.value);
-            const correctAnswer = normalizeAnswer(input.dataset.answer);
 
-            if (userAnswer !== correctAnswer) {
-                corrections.push(input.dataset.answer);
+            if (
+                input.classList.contains(
+                    "irregular-tense-input--incorrect"
+                )
+            ) {
+
+                corrections.push(
+                    input.dataset.answer
+                );
+
             }
+
         }
     );
 
     feedback.textContent =
-        `✗ ${lang.incorrect} — ${
-            corrections.join(" / ")
-        }`;
+        `✗ ${lang.incorrect} — ${corrections.join(" / ")}`;
 
-    feedback.className = "answer-feedback answer-feedback--incorrect";
+    feedback.className =
+        "answer-feedback answer-feedback--incorrect";
 }
 
 
@@ -361,7 +406,6 @@ function startIrregularTensesPractice() {
     // RESET
     practiceState.currentQuestion = 0;
     practiceState.totalQuestions = practiceState.irregularTenseQuestions.length;
-    practiceState.irregularTenseAttempt = 1;
     practiceState.irregularTenseAnswered = false;
 
     // RESET STATISTICS
@@ -395,7 +439,6 @@ function showCurrentIrregularTensesQuestion() {
             practiceState.currentQuestion
         ];
 
-    practiceState.irregularTenseAttempt = 1;
     practiceState.irregularTenseAnswered = false;
 
     // PROGRESS
@@ -415,20 +458,49 @@ function showCurrentIrregularTensesQuestion() {
 
     forms.forEach(
         ([form, translation], index) => {
+
+            // ==================================================
+            // DETERMINE QUESTION / ANSWER LANGUAGE
+            // ==================================================
+
+            let question;
+            let correctAnswer;
+
+            if (state.languageMode === "es") {
+                // Spanish -> English
+                question = translation;
+                correctAnswer = form;
+            } else {
+                // English -> Spanish
+                question = form;
+                correctAnswer = translation;
+            }
+
+            // ==================================================
             // WORD
+            // ==================================================
+
             const word = document.createElement("div");
             word.className = "irregular-tense-word";
-            word.textContent = form;
+            word.textContent = question;
 
+            // ==================================================
             // INPUT
+            // ==================================================
+
             const input = document.createElement("input");
             input.type = "text";
             input.className = "answer-input irregular-tense-input";
             input.autocomplete = "off";
-            input.dataset.answer = translation;
+
+            // Store the expected answer
+            input.dataset.answer = correctAnswer;
             input.dataset.index = index;
 
+            // ==================================================
             // ADD TO GRID
+            // ==================================================
+
             grid.appendChild(word);
             grid.appendChild(input);
         }
@@ -1197,8 +1269,6 @@ function returnToStart() {
     // IRREGULAR VERBS
 
     practiceState.irregularTenseQuestions = [];
-
-    practiceState.irregularTenseAttempt = 1;
 
     practiceState.irregularTenseAnswered = false;
 
