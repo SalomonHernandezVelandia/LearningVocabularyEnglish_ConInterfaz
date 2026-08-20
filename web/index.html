@@ -98,13 +98,7 @@
 
                 <!-- LEVEL SELECTION                              -->
                 <div class="practice-step" id="level-selection" hidden>
-                    <div class="level-options" id="level-options"> </div>
-                    <!-- CUSTOM WORD COUNT -->
-                    <div class="custom-amount" id="custom-amount" hidden>
-                        <label class="custom-amount__label" id="custom-amount-label" for="custom-amount-input"> </label>
-                        <input class="custom-amount__input" id="custom-amount-input" type="number" min="1" step="1">
-                        <button class="button button--primary" id="custom-amount-continue" type="button"> </button>
-                    </div>
+                    <div class="level-options" id="level-options"> <!-- Los botones de nivel se generan mediante JS --> </div>
                 </div>
 
                 <!-- CATEGORY SELECTION -->
@@ -127,6 +121,7 @@
 
                 <!-- VOCABULARY PRACTICE                     -->
                 <div class="practice-step" id="vocabulary-practice" hidden>
+                    <p id="translation-instructions" class="translation-instructions"></p>
                     <div class="question">
                         <p class="question__progress" id="question-progress"></p>
                         <div class="question__body">
@@ -151,6 +146,13 @@
                         <p class="answer-feedback" id="irregular-answer-feedback"> </p>
                         <button class="button button-ans" id="irregular-answer-button" type="button"> </button>
                     </div>
+                </div>
+                <!-- PRACTICE RESULT -->
+                <div id="practice-result" class="practice-result" hidden>
+                    <h2 id="practice-result-title"></h2>
+                    <p id="practice-result-score"></p>
+                    <p id="practice-result-stats"></p>
+                    <button id="back-to-start-button" type="button" class="button"></button>
                 </div>
             </div>
         </section>

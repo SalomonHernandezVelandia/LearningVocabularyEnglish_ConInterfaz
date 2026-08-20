@@ -11,7 +11,7 @@ function initializeApplication() {
     initializeLanguageSelection();
 
     // LEVEL
-    initializeCustomAmount();
+    // initializeCustomAmount();
 
     // CATEGORY
     initializeCategorySelection();

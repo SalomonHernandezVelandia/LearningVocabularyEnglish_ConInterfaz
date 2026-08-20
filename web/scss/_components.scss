@@ -151,10 +151,9 @@
 // ==========================================================
 // IRREGULAR VERBS BY TENSES
 // ==========================================================
-
 .irregular-tenses-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 16px 24px;
     width: 100%;
     max-width: 700px;
@@ -165,24 +164,34 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     font-size: 22px;
     font-weight: 600;
 }
 
 .irregular-tense-input {
     width: 100%;
-    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    font-size: 16px;
+    color: $text-primary;
+    text-align: center;
+    outline: none;
 }
 
 .irregular-tense-input--correct {
     border-color: #22c55e;
-    background-color: #dcfce7;
+    background-color: #8cfeb4;
+    color: rgb(13, 82, 39);
+    font-weight: 700;
 }
 
 .irregular-tense-input--incorrect {
     border-color: #ef4444;
-    background-color: #fee2e2;
+    background-color: #ff8b8b;
+    color: #4a0909;
+    font-weight: 700;
 }
 
 
@@ -194,9 +203,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 12px;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 5px;
+    margin-bottom: 30px;
 
     &__label {
         font-size: 1rem;
@@ -216,6 +226,53 @@
     }
 }
 
+
+.translation-instructions {
+    width: 100%;
+    max-width: 700px;
+    margin: 0.75rem auto 1.5rem;
+    padding: 0.75rem 1rem;
+
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+
+    opacity: 0.9;
+}
+
+
+// ==========================================================
+// PRACTICE RESULT
+// ==========================================================
+.practice-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.practice-result h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+#practice-result-score {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+#practice-result-stats {
+    margin: 0 0 16px;
+    font-size: 18px;
+}
 
 .question {
     width: 100%;
@@ -285,11 +342,12 @@
 @media (max-width: 768px) {
     .category-options {
         width: 95%;
-        gap: 10px;
+        row-gap: 15px;      
+        column-gap: 10px;
     }
 
     .button-category {
-        padding: 5px;
+        padding: 12px 5px;
         font-size: 12px;
     }
 
@@ -331,6 +389,21 @@
     }
     .button--primary {
         width: 150px;
+    }
+
+    .practice-result {
+        gap: 10px;
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    #practice-result-score {
+        font-size: 25px;
+    }
+
+    #practice-result-stats {
+        font-size: 15px;
     }
 }
 

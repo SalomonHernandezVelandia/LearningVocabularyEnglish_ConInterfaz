@@ -2,10 +2,9 @@
 // Niveles y cantidad de palabras
 // ==========================================================
 function renderLevelOptions() {
+
     const container =
-        document.getElementById(
-            "level-options"
-        );
+        document.getElementById("level-options");
 
     container.innerHTML = "";
 
@@ -14,17 +13,16 @@ function renderLevelOptions() {
         return;
     }
 
-
     levels.levels.forEach(level => {
+
         const button =
-            document.createElement(
-                "button"
-            );
+            document.createElement("button");
 
         button.type = "button";
         button.className = "button button-level";
         button.textContent = level.name;
         button.dataset.level = level.id;
+
         button.addEventListener(
             "click",
             () => {
@@ -33,6 +31,7 @@ function renderLevelOptions() {
         );
 
         container.appendChild(button);
+
     });
 }
 
@@ -137,46 +136,130 @@ function updateLevelStatus() {
 // SHOW CUSTOM AMOUNT
 // ==========================================================
 function showCustomAmount() {
-    const customAmount =
-        document.getElementById(
-            "custom-amount"
+
+    const container =
+        document.getElementById("level-options");
+
+    const customButton =
+        container.querySelector(
+            '[data-level="custom"]'
         );
 
-    const label =
-        document.getElementById(
-            "custom-amount-label"
+    if (!customButton) {
+        console.error(
+            "Custom amount button was not found."
         );
-
-    const continueButton =
-        document.getElementById(
-            "custom-amount-continue"
-        );
-
-    const lang = getCurrentMessages();
-    label.textContent = lang.word_count_label;
-    continueButton.textContent = lang.continue;
-    customAmount.hidden = false;
-
-    document.getElementById(
-        "custom-amount-input"
-    ).focus();
-}
-
-
-// ==========================================================
-// INITIALIZE CUSTOM AMOUNT
-// ==========================================================
-function initializeCustomAmount() {
-    const button =
-        document.getElementById(
-            "custom-amount-continue"
-        );
-
-    if (!button) {
         return;
     }
 
-    button.addEventListener("click", continueWithCustomAmount);
+    // Evitar crear el formulario dos veces
+    const existingForm =
+        document.getElementById("custom-amount");
+
+    if (existingForm) {
+        existingForm.remove();
+    }
+
+    const lang = getCurrentMessages();
+
+    // ======================================================
+    // CUSTOM AMOUNT CONTAINER
+    // ======================================================
+
+    const customAmount =
+        document.createElement("div");
+
+    customAmount.className = "custom-amount";
+    customAmount.id = "custom-amount";
+
+    // ======================================================
+    // LABEL
+    // ======================================================
+
+    const label =
+        document.createElement("label");
+
+    label.className = "custom-amount__label";
+    label.id = "custom-amount-label";
+    label.htmlFor = "custom-amount-input";
+    label.textContent = lang.word_count_label;
+
+    // ======================================================
+    // INPUT
+    // ======================================================
+
+    const input =
+        document.createElement("input");
+
+    input.className = "custom-amount__input";
+    input.id = "custom-amount-input";
+    input.type = "number";
+    input.min = "1";
+    input.step = "1";
+    input.autocomplete = "off";
+
+    // ======================================================
+    // CONTINUE BUTTON
+    // ======================================================
+
+    const continueButton =
+        document.createElement("button");
+
+    continueButton.className =
+        "button button--primary";
+
+    continueButton.id =
+        "custom-amount-continue";
+
+    continueButton.type = "button";
+
+    continueButton.textContent =
+        lang.continue;
+
+    // ======================================================
+    // EVENTS
+    // ======================================================
+
+    continueButton.addEventListener(
+        "click",
+        continueWithCustomAmount
+    );
+
+    input.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                continueWithCustomAmount();
+            }
+        }
+    );
+
+    // ======================================================
+    // BUILD
+    // ======================================================
+
+    customAmount.appendChild(label);
+    customAmount.appendChild(input);
+    customAmount.appendChild(continueButton);
+
+    // ======================================================
+    // INSERT DIRECTLY BELOW CUSTOM BUTTON
+    // ======================================================
+
+    customButton.insertAdjacentElement(
+        "afterend",
+        customAmount
+    );
+
+    // ======================================================
+    // FOCUS
+    // ======================================================
+
+    input.focus();
 }
 
 

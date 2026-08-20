@@ -48,7 +48,15 @@
         "correct_answer": "Correct answer:",
 
         "question": "Question",
-        "words": "words"
+        "words": "words",
+        "special_marker_parentheses": "This English word contains the marker {marker}. You must enter it exactly as shown, including the space before the marker.",
+        "special_marker_underscore": "This English word contains the identifier {marker}. You must enter it exactly as shown.",
+
+        "practice_finished": "Practice completed!",
+        "score_result": "You got {percentage}% correct.",
+        "correct_results": "Correct",
+        "incorrect_results": "Incorrect",
+        "return_to_start": "Return to start"
     },
 
     "es": {
@@ -97,6 +105,14 @@
         "next": "Siguiente",
         "correct_answer": "Respuesta correcta:",
         "question": "Pregunta",    
-        "words": "palabras"
+        "words": "palabras",
+        "special_marker_parentheses": "Esta palabra en inglés contiene el indicativo {marker}. Debes escribirlo exactamente como aparece, incluyendo el espacio antes del indicativo.",
+        "special_marker_underscore": "Esta palabra en inglés contiene el identificador {marker}. Debes escribirlo exactamente como aparece.",
+
+        "practice_finished": "¡Práctica terminada!",
+        "score_result": "Acertaste el {percentage}%.",
+        "correct_results": "Correctas",
+        "incorrect_results": "Incorrectas",
+        "return_to_start": "Volver al inicio"
     }
 }

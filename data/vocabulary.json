@@ -1,21 +1,9 @@
 {
   "learning_english": {
-    "Family": {"Grandparents": "Abuelos", "Grandfather": "Abuelo", "Grandmother": "Abuela", "Father": "Padre", "Mother": "Madre", "Dad": "Papa", "Mom": "Mama", "Uncle": "Tio", "Aunt": "Tia", "Brother": "Hermano", "Sister": "Hermana", "Son": "Hijo", "Daughter": "Hija", "Grandson": "Nieto", "Granddaughter": "Nieta", "Father In Law": "Suegro", "Mother In Law": "Suegra", "Stepfather": "Padrastro", "Stepmother": "Madrastra", "Husband": "Esposo", "Wife": "Esposa", "Nephew": "Sobrino", "Niece": "Sobrina", "Half Brother": "Medio Hermano", "Half Sister": "Media Hermana", "Stepson": "Hijastro", "Stepdaughter": "Hijastra", "Cousin": "Primo", "Son In Law": "Yerno", "Daughter In Law": "Nuera", "Spouses": "Esposos", "Parents": "Padres", "Siblings": "Hermanos", "Niblings": "Sobrinos", "Children": "Hijos", "Grandchildren": "Nietos", "Relatives": "Parientes", "Parents In Law": "Suegros", "Siblings In Law": "Cuñados", "Great Grandparents": "Bisabuelos", "Only Child": "Hijo Unico" },
-    "Relations": {"Couple": "Pareja (Par)", "Partner": "Pareja",
-      "Boyfriend": "Novio", "Girlfriend": "Novia",
-      "Friend": "Amigo", "Best Friend": "Mejor Amigo",
-      "Close Friends": "Amigos Cercanos", "Classmate": "Compañero De Clases",
-      "Coworker": "Compañero De Trabajo", "Colleague": "Colega",
-      "Fiance": "Prometido", "Fiancee": "Prometida",
-      "Ex Boyfriend": "Exnovio", "Ex Girlfriend": "Exnovia",
-      "Acquaintance": "Conocido", "Stranger": "Desconocido",
-      "Roommate": "Compañero De Cuarto", "Teammate": "Compañero De Equipo",
-      "Flatmate": "Compañero De Piso", "Single": "Soltero",
-      "Married": "Casado", "Divorced": "Divorciado",
-      "Separated": "Separado", "Widow": "Viuda",
-      "Widower": "Viudo", "Lover": "Amante",
-      "Engaged": "Comprometido", "Friendships": "Amistades"
-    },
+    "Family": {"Grandparents":"Abuelos", "Grandfather":"Abuelo", "Grandmother":"Abuela", "Father":"Padre", "Mother":"Madre", "Dad":"Papa", "Mom":"Mama", "Uncle":"Tio", "Aunt":"Tia", "Brother":"Hermano", "Sister":"Hermana", "Son":"Hijo", "Daughter":"Hija", "Grandson":"Nieto", "Granddaughter":"Nieta", "Father In Law":"Suegro", "Mother In Law":"Suegra", "Stepfather":"Padrastro", "Stepmother":"Madrastra", "Husband":"Esposo", "Wife":"Esposa", "Nephew":"Sobrino", "Niece":"Sobrina", 
+               "Half Brother":"Medio Hermano", "Half Sister":"Media Hermana", "Stepson":"Hijastro", "Stepdaughter":"Hijastra", "Cousin":"Primo", "Son In Law":"Yerno", "Daughter In Law":"Nuera", "Spouses":"Esposos", "Parents":"Padres", "Siblings":"Hermanos", "Niblings":"Sobrinos", "Children":"Hijos", "Grandchildren":"Nietos", "Relatives":"Parientes", "Parents In Law":"Suegros", "Siblings In Law":"Cuñados", "Great Grandparents":"Bisabuelos", "Only Child":"Hijo Unico" },
+    "Relations": {"Couple":"Pareja (Par)", "Partner":"Pareja", "Fiance":"Prometido", "Fiancee":"Prometida", "Boyfriend":"Novio", "Girlfriend":"Novia", "Ex Boyfriend": "Exnovio", "Ex Girlfriend": "Exnovia", "Friend":"Amigo", "Best Friend":"Mejor Amigo", "Close Friends":"Amigos Cercanos", "Classmate":"Compañero De Clases", "Coworker":"Compañero De Trabajo", "Colleague":"Colega", 
+                  "Neightbor":"Vecino", "Acquaintance":"Conocido", "Stranger":"Desconocido", "Roommate":"Compañero De Cuarto", "Teammate":"Compañero De Equipo", "Flatmate":"Compañero De Piso", "Single":"Soltero", "Married":"Casado", "Divorced":"Divorciado", "Separated":"Separado", "Widow":"Viuda", "Widower":"Viudo", "Lover":"Amante", "Engaged":"Comprometido", "Friendships":"Amistades"},
     "Work Environment": {"Boss": "Jefe",
       "Ceo": "Director Ejecutivo", "Director": "Director",
       "Manager": "Gerente", "Supervisor": "Supervisor",
@@ -934,576 +922,133 @@
       "Alike": "Por Igual"
     },
     "List of Irregular Verbs": [
-      {
-        "Arise": "Surgir",
-        "Arose": "Surgio",
-        "Arisen": "Surgido"
-      },
-      {
-        "Awake": "Despertar",
-        "Awoke": "Desperto",
-        "Awoken": "Despertado"
-      },
-      {
-        "Be": "Ser / Estar",
-        "Was / Were": "Era / Estaba",
-        "Been": "Sido / Estado"
-      },
-      {
-        "Bear": "Soportar",
-        "Bore": "Soporto",
-        "Borne": "Soportado"
-      },
-      {
-        "Beat (I)": "Golpear (Varios)",
-        "Beat (Ps)": "Golpeo",
-        "Beaten": "Golpeado"
-      },
-      {
-        "Become (I)": "Convertir",
-        "Became": "Convirtio",
-        "Become (Pp)": "Convertido"
-      },
-      {
-        "Befall": "Acontecer",
-        "Befell": "Acontecio",
-        "Befallen": "Acontecido"
-      },
-      {
-        "Begin": "Comenzar",
-        "Began": "Comenzo",
-        "Begun": "Comenzado"
-      },
-      {
-        "Bend": "Doblar",
-        "Bent (Ps)": "Doblo",
-        "Bent (Pp)": "Doblado"
-      },
-      {
-        "Beset (I)": "Acosar",
-        "Beset (Ps)": "Acoso",
-        "Beset (Pp)": "Acosado"
-      },
-      {
-        "Bet": "Apostar",
-        "Betted (Ps)": "Aposto",
-        "Betted (Pp)": "Apostado"
-      },
-      {
-        "Bid (I)": "Pujar",
-        "Bid (Ps)": "Pujo",
-        "Bid (Pp)": "Pujado"
-      },
-      {
-        "Bind": "Unir",
-        "Bound (Ps)": "Unio",
-        "Bound (Pp)": "Unido"
-      },
-      {
-        "Bite": "Morder",
-        "Bit": "Mordio",
-        "Bitten": "Mordido"
-      },
-      {
-        "Bleed": "Sangrar",
-        "Bled (Ps)": "Sangro",
-        "Bled (Pp)": "Sangrado"
-      },
-      {
-        "Blow": "Soplar",
-        "Blew": "Soplo",
-        "Blown": "Soplado"
-      },
-      {
-        "Break": "Romper",
-        "Broke": "Rompio",
-        "Broken": "Roto"
-      },
-      {
-        "Breed": "Criar",
-        "Bred (Ps)": "Crio",
-        "Bred (Pp)": "Criado"
-      },
-      {
-        "Breastfeed": "Amamantar",
-        "Breastfed (Ps)": "Amamanto",
-        "Breastfed (Pp)": "Amamantado"
-      },
-      {
-        "Bring": "Traer",
-        "Brought (Ps)": "Trajo",
-        "Brought (Pp)": "Traido"
-      },
-      {
-        "Broadcast (I)": "Transmitir",
-        "Broadcast (Ps)": "Transmitio",
-        "Broadcast (Pp)": "Transmitido"
-      },
-      {
-        "Browbeat (I)": "Intimidar",
-        "Browbeat (Ps)": "Intimido",
-        "Browbeaten": "Intimidado"
-      },
-      {
-        "Build": "Construir",
-        "Built (Ps)": "Construyo",
-        "Built (Pp)": "Construido"
-      },
-      {
-        "Burn": "Quemar",
-        "Burnt (Ps)": "Quemo",
-        "Burnt (Pp)": "Quemado"
-      },
-      {
-        "Burst (I)": "Reventar",
-        "Burst (Ps)": "Revento",
-        "Burst (Pp)": "Reventado"
-      },
-      {
-        "Bust (I)": "Quebrar",
-        "Bust (Ps)": "Quebro",
-        "Bust (Pp)": "Quebrado"
-      },
-      {
-        "Buy": "Comprar",
-        "Bought (Ps)": "Compro",
-        "Bought (Pp)": "Comprado"
-      },
-      {
-        "Cast (I)": "Arrojar",
-        "Cast (Ps)": "Arrojo",
-        "Cast (Pp)": "Arrojado"
-      },
-      {
-        "Catch": "Atrapar",
-        "Caught (Ps)": "Atrapo",
-        "Caught (Pp)": "Atrapado"
-      },
-      {
-        "Choose": "Elegir",
-        "Chose": "Eligio",
-        "Chosen": "Elegido"
-      },
-      {
-        "Cling": "Adherirse",
-        "Clung (Ps)": "Adhirio",
-        "Clung (Pp)": "Adherido"
-      },
-      {
-        "Come (I)": "Venir",
-        "Came": "Vino",
-        "Come (Pp)": "Venido"
-      },
-      {
-        "Cost (I)": "Costar",
-        "Cost (Ps)": "Costo",
-        "Cost (Pp)": "Costado"
-      },
-      {
-        "Creep": "Arrastrar",
-        "Crept (Ps)": "Arrastro",
-        "Crept (Pp)": "Arrastrado"
-      },
-      {
-        "Cut (I)": "Cortar",
-        "Cut (Ps)": "Corto",
-        "Cut (Pp)": "Cortado"
-      },
-      {
-        "Deal": "Tratar",
-        "Dealt (Ps)": "Trato",
-        "Dealt (Pp)": "Tratado"
-      },
-      {
-        "Dig": "Cavar",
-        "Dug (Ps)": "Cavo",
-        "Dug (Pp)": "Cavado"
-      },
-      {
-        "Dive": "Bucear",
-        "Dived (Ps)": "Buceo",
-        "Dived (Pp)": "Buceado"
-      },
-      {
-        "Do": "Hacer",
-        "Did": "Hizo",
-        "Done": "Hecho"
-      },
-      {
-        "Draw": "Dibujar",
-        "Drew": "Dibujo",
-        "Drawn": "Dibujado"
-      },
-      {
-        "Dream": "Soñar",
-        "Dreamt (Ps)": "Soño",
-        "Dreamt (Pp)": "Soñado"
-      },
-      {
-        "Drink": "Beber",
-        "Drank": "Bebio",
-        "Drunk": "Bebido"
-      },
-      {
-        "Drive": "Conducir",
-        "Drove": "Condujo",
-        "Driven": "Conducido"
-      },
-      {
-        "Dwell": "Habitar",
-        "Dwelt (Ps)": "Habito",
-        "Dwelt (Pp)": "Habitado"
-      },
-      {
-        "Eat": "Comer",
-        "Ate": "Comio",
-        "Eaten": "Comido"
-      },
-      {
-        "Fall": "Caer",
-        "Fell": "Cayo",
-        "Fallen": "Caido"
-      },
-      {
-        "Feed": "Alimentar",
-        "Fed (Ps)": "Alimento",
-        "Fed (Pp)": "Alimentado"
-      },
-      {
-        "Feel": "Sentir",
-        "Felt (Ps)": "Sintio",
-        "Felt (Pp)": "Sentido"
-      },
-      {
-        "Fight": "Luchar",
-        "Fought (Ps)": "Lucho",
-        "Fought (Pp)": "Luchado"
-      },
-      {
-        "Find": "Encontrar",
-        "Found (Ps)": "Encontro",
-        "Found (Pp)": "Encontrado"
-      },
-      {
-        "Flee": "Huir",
-        "Fled (Ps)": "Huyo",
-        "Fled (Pp)": "Huido"
-      },
-      {
-        "Fling": "Arrojar (Fuerza)",
-        "Flung (Ps)": "Arrojo (Fuerza)",
-        "Flung (Pp)": "Arrojo (Fuerza)"
-      },
-      {
-        "Fly": "Volar",
-        "Flew": "Volo",
-        "Flown": "Volado"
-      },
-      {
-        "Forbid": "Prohibir",
-        "Forbade": "Prohibio",
-        "Forbidden": "Prohibido"
-      },
-      {
-        "Forecast (I)": "Preveer (Datos)",
-        "Forecast (Ps)": "Previo (Datos)",
-        "Forecast (Pp)": "Predicho (Datos)"
-      },
-      {
-        "Foresee": "Preveer (Intuicion)",
-        "Foresaw": "Previo (Intuicion)",
-        "Foreseen": "Previsto"
-      },
-      {
-        "Forget": "Olvidar",
-        "Forgot": "Olvido",
-        "Forgotten": "Olvidado"
-      },
-      {
-        "Forgive": "Perdonar",
-        "Forgave": "Perdono",
-        "Forgiven": "Perdonado"
-      },
-      {
-        "Forgo": "Abstenerse",
-        "Forwent": "Abstuvo",
-        "Forgone": "Abstenido"
-      },
-      {
-        "Forsake": "Abandonar",
-        "Forsook": "Abandono",
-        "Forsaken": "Abandonado"
-      },
-      {
-        "Freeze": "Congelar",
-        "Froze": "Congelo",
-        "Frozen": "Congelado"
-      },
-      {
-        "Get": "Obtener",
-        "Got": "Obtuvo",
-        "Gotten": "Obtenido"
-      },
-      {
-        "Give": "Dar",
-        "Gave": "Dio",
-        "Given": "Dado"
-      },
-      {
-        "Go": "Ir",
-        "Went": "Fue",
-        "Gone": "Ido"
-      },
-      {
-        "Grind": "Moler",
-        "Ground (Ps)": "Molio",
-        "Ground (Pp)": "Molido"
-      },
-      {
-        "Grow": "Crecer",
-        "Grew": "Crecio",
-        "Grown": "Crecido"
-      },
-      {
-        "Hang": "Colgar",
-        "Hung (Ps)": "Colgo",
-        "Hung (Pp)": "Colgado"
-      },
-      {
-        "Have": "Tener",
-        "Had (Ps)": "Tuvo",
-        "Had (Pp)": "Tenido"
-      },
-      {
-        "Hear": "Escuchar",
-        "Heard (Ps)": "Escucho",
-        "Heard (Pp)": "Escuchado"
-      },
-      {
-        "Hide": "Esconder",
-        "Hid": "Escondio",
-        "Hidden": "Escondido"
-      },
-      {
-        "Hit (I)": "Golpear (Una Vez)",
-        "Hit (Ps)": "Golpeo (Una Vez)",
-        "Hit (Pp)": "Golpeado (Una vez)"
-      },
-      {
-        "Hold": "Sostener",
-        "Held (Ps)": "Sostuvo",
-        "Held (Pp)": "Sostenido"
-      },
-      {
-        "Hurt (I)": "Herir",
-        "Hurt (Ps)": "Hirio",
-        "Hurt (Pp)": "Herido"
-      },
-      {
-        "Keep": "Conservar",
-        "Kept (Ps)": "Conservo",
-        "Kept (Pp)": "Conservado"
-      },
-      {
-        "Kneel": "Arrodillar",
-        "Knelt (Ps)": "Arrodillo",
-        "Knelt (Pp)": "Arrodillado"
-      },
-      {
-        "Know": "Saber",
-        "Knew": "Supo / Conocio",
-        "Known": "Sabido / Conocido"
-      },
-      {
-        "Knit": "Tejer",
-        "Knitted (Ps)": "Tejio",
-        "Knitted (Pp)": "Tejido"
-      },
-      {
-        "Lay": "Poner (Horizontalmente)",
-        "Laid (Ps)": "Puso (Horizontalmente)",
-        "Laid (Pp)": "Puesto (Horizontalmente)"
-      },
-      {
-        "Lead": "Dirigir",
-        "Led (Ps)": "Lidero",
-        "Led (Pp)": "Liderado"
-      },
-      {
-        "Lean": "Inclinarse",
-        "Leant (Ps)": "Inclino",
-        "Leant (Pp)": "Inclinado"
-      },
-      {
-        "Leap": "Brincar",
-        "Leapt (Ps)": "Brinco",
-        "Leapt (Pp)": "Brincado"
-      },
-      {
-        "Learn": "Aprender",
-        "Learnt (Ps)": "Aprendio",
-        "Learnt (Pp)": "Aprendido"
-      },
-      {
-        "Leave": "Dejar (Abandonar)",
-        "Left (Ps)": "Dejo (Abandonar)",
-        "Left (Pp)": "Dejado (Abandonar)"
-      },
-      {
-        "Lend": "Prestar",
-        "Lent (Ps)": "Presto",
-        "Lent (Pp)": "Prestado"
-      },
-      {
-        "Let (I)": "Dejar (Permitir)",
-        "Let (Ps)": "Dejo (Permitir)",
-        "Let (Pp)": "Dejado (Permitir)"
-      },
-      {
-        "Lie": "Mentir",
-        "Lied (Ps)": "Mintio",
-        "Lied (Pp)": "Mentido"
-      },
-      {
-        "Light": "Encender",
-        "Lit (Ps)": "Encendio",
-        "Lit (Pp)": "Encendido"
-      },
-      {
-        "Lose": "Perder (Permanentemente)",
-        "Lost (Ps)": "Perdio (Permanentemente)",
-        "Lost (Pp)": "Perdido (Permanentemente)"
-      },
-      {
-        "Make": "Hacer (De Crear)",
-        "Made (Ps)": "Hizo (De Crear)",
-        "Made (Pp)": "Hecho (De Crear)"
-      },
-      {
-        "Mean": "Significar",
-        "Meant (Ps)": "Significo",
-        "Meant (Pp)": "Significado"
-      },
-      {
-        "Meet": "Encontrarse",
-        "Met (Ps)": "Se Encontro",
-        "Met (Pp)": "Lo Ha Encontrado"
-      },
-      {
-        "Mistake": "Equivocar",
-        "Mistook": "Equivoco",
-        "Mistaken": "Equivocado"
-      },
-      {
-        "Mow": "Podar",
-        "Mowed (Ps)": "Podo",
-        "Mowed (Pp)": "Podado"
-      },
-      {
-        "Pay": "Pagar",
-        "Paid (Ps)": "Pago",
-        "Paid (Pp)": "Pagado"
-      },
-      {
-        "Put (I)": "Poner",
-        "Put (Ps)": "Puso",
-        "Put (Pp)": "Puesto"
-      },
-      {
-        "Read (I)": "Leer",
-        "Read (Ps)": "Leyo",
-        "Read (Pp)": "Leido"
-      },
-      {
-        "Rise": "Elevar",
-        "Rose": "Elevo",
-        "Risen": "Elevado"
-      },
-      {
-        "Run (I)": "Correr",
-        "Ran": "Corrio",
-        "Run (Pp)": "Corrido"
-      },
-      {
-        "Say": "Decir",
-        "Said (Ps)": "Dijo",
-        "Said (Pp)": "Dicho"
-      },
-      {
-        "See": "Ver",
-        "Saw": "Vio",
-        "Seen": "Visto"
-      },
-      {
-        "Send": "Enviar",
-        "Sent (Ps)": "Envio",
-        "Sent (Pp)": "Enviado"
-      },
-      {
-        "Set (I)": "Colocar",
-        "Set (Ps)": "Coloco",
-        "Set (Pp)": "Colocado"
-      },
-      {
-        "Show": "Mostrar",
-        "Showed": "Mostro",
-        "Shown": "Mostrado"
-      },
-      {
-        "Sit": "Sentar",
-        "Sat (Ps)": "Sento",
-        "Sat (Pp)": "Sentado"
-      },
-      {
-        "Speak": "Hablar",
-        "Spoke": "Hablo",
-        "Spoken": "Hablado"
-      },
-      {
-        "Spend": "Gastar",
-        "Spent (Ps)": "Gasto",
-        "Spent (Pp)": "Gastado"
-      },
-      {
-        "Stand": "Pararse",
-        "Stood (Ps)": "Se Paro",
-        "Stood (Pp)": "Parado"
-      },
-      {
-        "Take": "Tomar",
-        "Took": "Tomo",
-        "Taken": "Tomado"
-      },
-      {
-        "Tell": "Decir (Mencionar)",
-        "Told (Ps)": "Dijo (Mencionar)",
-        "Told (Pp)": "Dicho (Mencionar)"
-      },
-      {
-        "Think": "Pensar",
-        "Thought (Ps)": "Penso",
-        "Thought (Pp)": "Pensado"
-      },
-      {
-        "Understand": "Entender",
-        "Understood (Ps)": "Entendio",
-        "Understood (Pp)": "Entendido"
-      },
-      {
-        "Wear": "Llevar Puesto",
-        "Wore": "Llevo / Vistio",
-        "Worn": "Llevado / Vestido"
-      },
-      {
-        "Win": "Ganar",
-        "Won (Ps)": "Gano",
-        "Won (Pp)": "Ganado"
-      },
-      {
-        "Write": "Escribir",
-        "Wrote": "Escribio",
-        "Written": "Escrito"
-      }
+      {"Arise":"Surgir",          "Arose":"Surgió",               "Arisen":"Surgido"},
+      {"Awake": "Despertar",      "Awoke": "Despertó",            "Awoken": "Despertado"},
+      {"Be":"Ser / Estar",        "Was / Were":"Era / Estaba",    "Been": "Sido / Estado"},
+      {"Bear":"Soportar",         "Bore":"Soportó",               "Borne":"Soportado"},
+      {"Beat (I)":"Golpear (Varios)", "Beat (Ps)":"Golpeó",       "Beaten":"Golpeado"},
+      {"Become (I)":"Convertir",  "Became":"Convirtió",           "Become (Pp)":"Convertido"},
+      {"Befall":"Acontecer",      "Befell":"Aconteció",           "Befallen":"Acontecido"},
+      {"Begin":"Comenzar",        "Began":"Comenzó",              "Begun":"Comenzado"},
+      {"Bend":"Doblar",           "Bent (Ps)":"Dobló",            "Bent (Pp)":"Doblado"},
+      {"Beset (I)":"Acosar",      "Beset (Ps)":"Acosó",           "Beset (Pp)":"Acosado"},
+      {"Bet":"Apostar",           "Betted (Ps)":"Apostó",         "Betted (Pp)":"Apostado"},
+      {"Bid (I)":"Pujar",         "Bid (Ps)":"Pujó",              "Bid (Pp)":"Pujado"},
+      {"Bind":"Unir",             "Bound (Ps)":"Unió",            "Bound (Pp)":"Unido"},
+      {"Bite":"Morder",           "Bit":"Mordió",                 "Bitten":"Mordido"},
+      {"Bleed":"Sangrar",         "Bled (Ps)": "Sangró",          "Bled (Pp)":"Sangrado"},
+      {"Blow":"Soplar",           "Blew":"Sopló",                 "Blown":"Soplado"},
+      {"Break":"Romper",          "Broke":"Rompió",               "Broken":"Roto"},
+      {"Breed":"Criar",           "Bred (Ps)":"Crió",             "Bred (Pp)":"Criado"},
+      {"Breastfeed":"Amamantar",  "Breastfed (Ps)":"Amamantó",    "Breastfed (Pp)":"Amamantado"},
+      {"Bring":"Traer",           "Brought (Ps)":"Trajo",         "Brought (Pp)":"Traido"},
+      {"Broadcast (I)":"Transmitir","Broadcast (Ps)":"Transmitió","Broadcast (Pp)":"Transmitido"},
+      {"Browbeat (I)":"Intimidar","Browbeat (Ps)":"Intimidó",     "Browbeaten":"Intimidado"},
+      {"Build":"Construir",       "Built (Ps)":"Construyó",       "Built (Pp)":"Construido"},
+      {"Burn":"Quemar",           "Burnt (Ps)":"Quemó",           "Burnt (Pp)":"Quemado"},
+      {"Burst (I)":"Reventar",    "Burst (Ps)":"Reventó",         "Burst (Pp)":"Reventado"},
+      {"Bust (I)":"Quebrar",      "Bust (Ps)":"Quebró",           "Bust (Pp)":"Quebrado"},
+      {"Buy":"Comprar",           "Bought (Ps)":"Compró",         "Bought (Pp)":"Comprado"},
+      {"Cast (I)": "Arrojar",     "Cast (Ps)": "Arrojó",          "Cast (Pp)": "Arrojado"},
+      {"Catch": "Atrapar",        "Caught (Ps)": "Atrapó",        "Caught (Pp)": "Atrapado"},
+      {"Choose": "Elegir",        "Chose": "Eligió",              "Chosen": "Elegido"},
+      {"Cling": "Adherirse",      "Clung (Ps)": "Adhirió",        "Clung (Pp)": "Adherido"},
+      {"Come (I)": "Venir",       "Came": "Vinó",                 "Come (Pp)": "Venido"},
+      {"Cost (I)": "Costar",      "Cost (Ps)": "Costó",           "Cost (Pp)": "Costado"},
+      {"Creep": "Arrastrar",      "Crept (Ps)": "Arrastró",       "Crept (Pp)": "Arrastrado"},
+      {"Cut (I)": "Cortar",       "Cut (Ps)": "Cortó",            "Cut (Pp)": "Cortado"},
+      {"Deal": "Tratar",          "Dealt (Ps)": "Trató",          "Dealt (Pp)": "Tratado"},
+      {"Dig": "Cavar",            "Dug (Ps)": "Cavó",             "Dug (Pp)": "Cavado"},
+      {"Dive": "Bucear",          "Dived (Ps)": "Buceó",          "Dived (Pp)": "Buceado"},
+      {"Do": "Hacer",             "Did": "Hizo",                  "Done": "Hecho"},
+      {"Draw": "Dibujar",         "Drew": "Dibujó",               "Drawn": "Dibujado"},
+      {"Dream": "Soñar",          "Dreamt (Ps)": "Soñó",          "Dreamt (Pp)": "Soñado"},
+      {"Drink": "Beber",          "Drank": "Bebió",               "Drunk": "Bebido"},
+      {"Drive": "Conducir",       "Drove": "Condujo",             "Driven": "Conducido"},
+      {"Dwell": "Habitar",        "Dwelt (Ps)": "Habitó",         "Dwelt (Pp)": "Habitado"},
+      {"Eat":"Comer",             "Ate":"Comió",                  "Eaten": "Comido"},
+      {"Fall":"Caer",             "Fell":"Cayó",                  "Fallen": "Caido"},
+      {"Feed":"Alimentar",        "Fed (Ps)":"Alimentó",          "Fed (Pp)": "Alimentado"},
+      {"Feel":"Sentir",           "Felt (Ps)":"Sintió",           "Felt (Pp)": "Sentido"},
+      {"Fight":"Luchar",          "Fought (Ps)":"Luchó",          "Fought (Pp)": "Luchado"},
+      {"Find":"Encontrar",        "Found (Ps)":"Encontró",        "Found (Pp)": "Encontrado"},
+      {"Flee":"Huir",             "Fled (Ps)":"Huyó",             "Fled (Pp)": "Huido"},
+      {"Fling":"Arrojar (Fuerza)","Flung (Ps)":"Arrojó (Fuerza)", "Flung (Pp)": "Arrojo (Fuerza)"},
+      {"Fly":"Volar",             "Flew":"Voló",                  "Flown": "Volado"},
+      {"Forbid":"Prohibir",       "Forbade":"Prohibió","Forbidden": "Prohibido"},
+      {"Forecast (I)":"Preveer (Datos)","Forecast (Ps)":"Previo (Datos)","Forecast (Pp)": "Predicho (Datos)"},
+      {"Foresee":"Preveer (Intuicion)","Foresaw":"Previo (Intuicion)","Foreseen": "Previsto"},
+      {"Forget":"Olvidar",        "Forgot":"Olvidó",              "Forgotten": "Olvidado"},
+      {"Forgive":"Perdonar",      "Forgave":"Perdonó",            "Forgiven": "Perdonado"},
+      {"Forgo":"Abstenerse",      "Forwent":"Abstuvo",            "Forgone": "Abstenido"},
+      {"Forsake":"Abandonar",     "Forsook":"Abandonó",           "Forsaken": "Abandonado"},
+      {"Freeze":"Congelar",       "Froze":"Congeló",              "Frozen": "Congelado"},
+      {"Get":"Obtener",           "Got":"Obtuvó",                 "Gotten": "Obtenido"},
+      {"Give":"Dar",              "Gave":"Dió",                   "Given": "Dado"},
+      {"Go":"Ir",                 "Went":"Fue",                   "Gone": "Ido"},
+      {"Grind":"Moler",           "Ground (Ps)":"Molió",          "Ground (Pp)": "Molido"},
+      {"Grow":"Crecer",           "Grew":"Creció",                "Grown": "Crecido"},
+      {"Hang":"Colgar",           "Hung (Ps)":"Colgó",            "Hung (Pp)": "Colgado"},
+      {"Have":"Tener",            "Had (Ps)":"Tuvo",              "Had (Pp)": "Tenido"},
+      {"Hear":"Escuchar",         "Heard (Ps)":"Escuchó",         "Heard (Pp)": "Escuchado"},
+      {"Hide":"Esconder",         "Hid":"Escondió",               "Hidden": "Escondido"},
+      {"Hit (I)":"Golpear (Una Vez)","Hit (Ps)":"Golpeó (Una Vez)","Hit (Pp)": "Golpeado (Una vez)"},
+      {"Hold":"Sostener",         "Held (Ps)":"Sostuvó",          "Held (Pp)": "Sostenido"},
+      {"Hurt (I)":"Herir",        "Hurt (Ps)":"Hirió",            "Hurt (Pp)": "Herido"},
+      {"Keep":"Conservar",        "Kept (Ps)":"Conservó",         "Kept (Pp)": "Conservado"},
+      {"Kneel":"Arrodillar",      "Knelt (Ps)":"Arrodilló",       "Knelt (Pp)": "Arrodillado"},
+      {"Know":"Saber",            "Knew":"Supo / Conoció",        "Known": "Sabido / Conocido"},
+      {"Knit":"Tejer",            "Knitted (Ps)":"Tejió",         "Knitted (Pp)": "Tejido"},
+      {"Lay":"Poner (Horizontalmente)","Laid (Ps)":"Puso (Horizontalmente)","Laid (Pp)": "Puesto (Horizontalmente)"},
+      {"Lead":"Dirigir",          "Led (Ps)":"Lideró",            "Led (Pp)": "Liderado"},
+      {"Lean":"Inclinarse",       "Leant (Ps)":"Inclinó",         "Leant (Pp)": "Inclinado"},
+      {"Leap":"Brincar",          "Leapt (Ps)":"Brincó",          "Leapt (Pp)": "Brincado"},
+      {"Learn":"Aprender",        "Learnt (Ps)":"Aprendió",       "Learnt (Pp)": "Aprendido"},
+      {"Leave":"Dejar (Abandonar)","Left (Ps)":"Dejó (Abandonar)","Left (Pp)": "Dejado (Abandonar)"},
+      {"Lend":"Prestar",          "Lent (Ps)":"Prestó",           "Lent (Pp)": "Prestado"},
+      {"Let (I)":"Dejar (Permitir)","Let (Ps)":"Dejó (Permitir)", "Let (Pp)": "Dejado (Permitir)"},
+      {"Lie":"Mentir",            "Lied (Ps)":"Mintió",           "Lied (Pp)": "Mentido"},
+      {"Light":"Encender",        "Lit (Ps)":"Encendió",          "Lit (Pp)": "Encendido"},
+      {"Lose":"Perder",           "Lost (Ps)":"Perdió",           "Lost (Pp)": "Perdido (Permanentemente)"},
+      {"Make":"Hacer (De Crear)", "Made (Ps)":"Hizo (De Crear)",  "Made (Pp)": "Hecho (De Crear)"},
+      {"Mean":"Significar",       "Meant (Ps)":"Significó",       "Meant (Pp)": "Significado"},
+      {"Meet":"Encontrarse",      "Met (Ps)":"Se Encontró",       "Met (Pp)": "Lo Ha Encontrado"},
+      {"Mistake":"Equivocar",     "Mistook":"Equivocó",           "Mistaken": "Equivocado"},
+      {"Mow":"Podar",             "Mowed (Ps)":"Podó",            "Mowed (Pp)": "Podado"},
+      {"Pay":"Pagar",             "Paid (Ps)":"Pagó",             "Paid (Pp)": "Pagado"},
+      {"Put (I)":"Poner",         "Put (Ps)":"Puso",              "Put (Pp)": "Puesto"},
+      {"Read (I)":"Leer",         "Read (Ps)":"Leyó",             "Read (Pp)": "Leido"},
+      {"Ride":"Montar",           "Rode":"Montó",                 "Ridden": "Montado"},
+      {"Ring":"Sonar",            "Rang":"Sonó",                  "Rung": "Sonado"},
+      {"Rise":"Elevar",           "Rose":"Elevó",                 "Risen": "Elevado"},
+      {"Run (I)":"Correr",        "Ran":"Corrió",                 "Run (Pp)": "Corrido"},
+      {"Say":"Decir",             "Said (Ps)":"Dijo",             "Said (Pp)": "Dicho"},
+      {"See":"Ver",               "Saw":"Vió",                    "Seen": "Visto"},
+      {"Seek":"Buscar",           "Sought (Ps)":"Buscó",          "Sought (Pp)": "Buscado"},
+      {"Sell":"Vender",           "Sold (Ps)":"Vendió",           "Sold (Pp)": "Vendido"},
+      {"Send":"Enviar",           "Sent (Ps)":"Envió",            "Sent (Pp)": "Enviado"},
+      {"Set (I)":"Colocar",       "Set (Ps)":"Colocó",            "Set (Pp)": "Colocado"},
+      {"Sew":"Coser",             "Sewed":"Cosió",                "Sewn": "Cosido"},
+      {"Shine":"Brillar",         "Shone (Ps)":"Brilló",          "Shone (Pp)": "Brillado"},
+      {"Shoot":"Disparar",        "Shot (Ps)":"Disparó",          "Shot (Pp)": "Disparado"},
+      {"Show":"Mostrar",          "Showed":"Mostró",              "Shown": "Mostrado"},
+      {"Sing":"Cantar",           "Sang":"Cantó",                 "Sung": "Cantado"},
+      {"Sink":"Hundir",           "Sank":"Hundió",                "Sunk": "Hundido"},
+      {"Sit":"Sentar",            "Sat (Ps)":"Sentó",             "Sat (Pp)": "Sentado"},
+      {"Sleep":"Dormir",          "Slept (Ps)":"Durmió",          "Slept (Pp)": "Dormido"},
+      {"Slide":"Deslizar",        "Slid (Ps)":"Deslizó",          "Slid (Pp)": "Deslizado"},
+      {"Sow":"Sembrar",           "Sowed":"Sembró",               "Sown": "Sembrado"},
+      {"Speak":"Hablar",          "Spoke":"Habló",                "Spoken": "Hablado"},
+      {"Speed":"Acelerar",        "Sped (Ps)":"Aceleró",          "Sped (Pp)": "Acelerado"},
+      {"Spend":"Gastar",          "Spent (Ps)":"Gastó",           "Spent (Pp)": "Gastado"},
+      {"Stand":"Pararse",         "Stood (Ps)":"Se Paró",         "Stood (Pp)": "Parado"},
+      {"Take":"Tomar",            "Took":"Tomó",                  "Taken": "Tomado"},
+      {"Tell":"Decir (Mencionar)","Told (Ps)":"Dijo (Mencionar)", "Told (Pp)": "Dicho (Mencionar)"},
+      {"Think":"Pensar",          "Thought (Ps)":"Pensó",         "Thought (Pp)": "Pensado"},
+      {"Understand":"Entender",   "Understood (Ps)":"Entendió",   "Understood (Pp)": "Entendido"},
+      {"Wear":"Llevar Puesto",    "Wore":"Llevó / Vistió",        "Worn": "Llevado / Vestido"},
+      {"Win":"Ganar",             "Won (Ps)":"Ganó",              "Won (Pp)": "Ganado"},
+      {"Write":"Escribir",        "Wrote":"Escribió",             "Written": "Escrito"}
     ],
     "English Readings": {
       "Succeed": "Tener Exito",

@@ -26,7 +26,31 @@ const practiceState = {
 
 // INITIALIZE PRACTICE
 function initializePractice() {
-    const answerButton = document.getElementById("answer-button");
+
+    const backToStartButton =
+        document.getElementById(
+            "back-to-start-button"
+        );
+
+    if (backToStartButton) {
+        backToStartButton.addEventListener(
+            "click",
+            returnToStart
+        );
+    }
+
+    updateReturnToStartButton();
+
+    const answerButton =
+        document.getElementById("answer-button");
+
+    // NORMAL VOCABULARY BUTTON
+    if (answerButton) {
+        answerButton.addEventListener(
+            "click",
+            handleAnswer
+        );
+    }
     const answerInput = document.getElementById("answer-input");
 
     // NORMAL VOCABULARY BUTTON
@@ -48,11 +72,7 @@ function initializePractice() {
     }
 
     // IRREGULAR VERBS BUTTON
-    const irregularButton =
-        document.getElementById(
-            "irregular-answer-button"
-        );
-
+    const irregularButton = document.getElementById("irregular-answer-button");
     if (irregularButton) {
         irregularButton.addEventListener(
             "click",
@@ -61,16 +81,11 @@ function initializePractice() {
     }
 
     // IRREGULAR VERBS ENTER
-    const irregularGrid =
-        document.getElementById(
-            "irregular-tenses-grid"
-        );
-
+    const irregularGrid =document.getElementById("irregular-tenses-grid");
     if (irregularGrid) {
         irregularGrid.addEventListener(
             "keydown",
             event => {
-
                 if (event.key !== "Enter") {
                     return;
                 }
@@ -110,11 +125,7 @@ function handleIrregularTensesAnswer() {
     if (practiceState.irregularTenseAnswered) {
         return;
     }
-
-    const grid =
-        document.getElementById(
-            "irregular-tenses-grid"
-        );
+    const grid = document.getElementById("irregular-tenses-grid");
 
     const inputs =
         [
@@ -214,7 +225,6 @@ function handleIrregularTensesAnswer() {
         return;
     }
 
-
     // SECOND ATTEMPT FAILED
     practiceState.irregularTenseAnswered = true;
     practiceState.incorrectAnswers++;
@@ -233,9 +243,7 @@ function handleIrregularTensesAnswer() {
     );
 }
 
-// ==========================================================
 // CORRECT FEEDBACK
-// ==========================================================
 function showIrregularTensesCorrectFeedback() {
     const feedback = document.getElementById("irregular-answer-feedback" );
     const lang = getCurrentMessages();
@@ -243,9 +251,7 @@ function showIrregularTensesCorrectFeedback() {
     feedback.className = "answer-feedback answer-feedback--correct";
 }
 
-// ==========================================================
 // RETRY FEEDBACK
-// ==========================================================
 function showIrregularTensesRetryFeedback() {
     const feedback = document.getElementById("irregular-answer-feedback");
     const lang = getCurrentMessages();
@@ -253,10 +259,7 @@ function showIrregularTensesRetryFeedback() {
     feedback.className = "answer-feedback answer-feedback--incorrect";
 }
 
-
-// ==========================================================
 // INCORRECT FEEDBACK
-// ==========================================================
 function showIrregularTensesIncorrectFeedback() {
     const feedback = document.getElementById("irregular-answer-feedback");
     const lang = getCurrentMessages();
@@ -265,15 +268,8 @@ function showIrregularTensesIncorrectFeedback() {
 
     inputs.forEach(
         input => {
-            const userAnswer =
-                normalizeAnswer(
-                    input.value
-                );
-
-            const correctAnswer =
-                normalizeAnswer(
-                    input.dataset.answer
-                );
+            const userAnswer = normalizeAnswer(input.value);
+            const correctAnswer = normalizeAnswer(input.dataset.answer);
 
             if (userAnswer !== correctAnswer) {
                 corrections.push(input.dataset.answer);
@@ -290,9 +286,7 @@ function showIrregularTensesIncorrectFeedback() {
 }
 
 
-// ==========================================================
 // NEXT IRREGULAR TENSE QUESTION
-// ==========================================================
 function nextIrregularTenseQuestion() {
     practiceState.currentQuestion++;
     showCurrentIrregularTensesQuestion();
@@ -303,43 +297,23 @@ function nextIrregularTenseQuestion() {
 // FINISH IRREGULAR TENSES PRACTICE
 // ==========================================================
 function finishIrregularTensesPractice() {
-    const lang = getCurrentMessages();
 
+    // HIDE IRREGULAR TENSES PRACTICE
     document.getElementById(
-        "irregular-question-progress"
-    ).textContent =
-        `${practiceState.totalQuestions}/${practiceState.totalQuestions}`;
+        "irregular-tenses-practice"
+    ).hidden = true;
 
-
-    document.getElementById(
-        "irregular-tenses-grid"
-    ).innerHTML =
-        "🎉";
-
-
-    document.getElementById(
-        "irregular-answer-feedback"
-    ).textContent =
-        lang.correct;
-
-
-    document.getElementById(
-        "irregular-answer-feedback"
-    ).className =
-        "answer-feedback answer-feedback--correct";
-
-
-    document.getElementById(
-        "irregular-answer-button"
-    ).style.display =
-        "none";
-
+    // SHOW FINAL RESULT
+    showPracticeResult();
 }
-
-
 
 // START VOCABULARY PRACTICE
 function startVocabularyPractice() {
+    const result = document.getElementById("practice-result");
+
+    if (result) {
+        result.hidden = true;
+    }
     const amount = state.customAmount;
     const category = state.categoryMode;
 
@@ -372,9 +346,7 @@ function startVocabularyPractice() {
 }
 
 
-// ==========================================================
 // START IRREGULAR VERBS BY TENSES PRACTICE
-// ==========================================================
 function startIrregularTensesPractice() {
     const amount = state.customAmount;
 
@@ -384,10 +356,7 @@ function startIrregularTensesPractice() {
     }
 
     // GENERATE VERBS
-    practiceState.irregularTenseQuestions =
-        generateIrregularVerbQuestions(
-            amount
-        );
+    practiceState.irregularTenseQuestions = generateIrregularVerbQuestions(amount);
 
     // RESET
     practiceState.currentQuestion = 0;
@@ -401,37 +370,19 @@ function startIrregularTensesPractice() {
     updatePracticeStats();
 
     // SHOW SCREEN
-    document.getElementById(
-        "language-selection"
-    ).hidden = true;
-
-    document.getElementById(
-        "level-selection"
-    ).hidden = true;
-
-    document.getElementById(
-        "category-selection"
-    ).hidden = true;
-
-    document.getElementById(
-        "irregular-verbs-selection"
-    ).hidden = true;
-
-    document.getElementById(
-        "vocabulary-practice"
-    ).hidden = true;
-
-    document.getElementById(
-        "irregular-tenses-practice"
-    ).hidden = false;
+    document.getElementById("language-selection").hidden = true;
+    document.getElementById("level-selection").hidden = true;
+    document.getElementById("category-selection").hidden = true;
+    document.getElementById("irregular-verbs-selection").hidden = true;
+    document.getElementById("vocabulary-practice").hidden = true;
+    document.getElementById("irregular-tenses-practice").hidden = false;
 
     // SHOW FIRST VERB
     showCurrentIrregularTensesQuestion();
 }
 
-// ==========================================================
+
 // SHOW CURRENT IRREGULAR VERB
-// ==========================================================
 function showCurrentIrregularTensesQuestion() {
     // FINISH
     if (practiceState.currentQuestion >= practiceState.totalQuestions) {
@@ -480,25 +431,16 @@ function showCurrentIrregularTensesQuestion() {
             // ADD TO GRID
             grid.appendChild(word);
             grid.appendChild(input);
-
         }
     );
 
     // RESET FEEDBACK
-    const feedback =
-        document.getElementById(
-            "irregular-answer-feedback"
-        );
-
+    const feedback = document.getElementById("irregular-answer-feedback");
     feedback.textContent = "";
     feedback.className = "answer-feedback";
 
     // BUTTON
-    const button =
-        document.getElementById(
-            "irregular-answer-button"
-        );
-
+    const button = document.getElementById("irregular-answer-button");
     button.disabled = false;
     button.textContent = lang.next;
 
@@ -511,13 +453,10 @@ function showCurrentIrregularTensesQuestion() {
     if (firstInput) {
         firstInput.focus();
     }
-
 }
 
 
-// ==========================================================
 // GENERATE QUESTIONS
-// ==========================================================
 function generateQuestions(category, amount) {
     // IRREGULAR VERBS
     if (category === "List of Irregular Verbs") {
@@ -532,7 +471,6 @@ function generateQuestions(category, amount) {
     else {
         categoryVocabulary = vocabulary.learning_english[category];
     }
-
 
     if (!categoryVocabulary) {
         console.error(`Category "${category}" was not found.`);
@@ -554,9 +492,7 @@ function generateQuestions(category, amount) {
 }
 
 
-// ==========================================================
 // GENERATE IRREGULAR VERB QUESTIONS
-// ==========================================================
 function generateIrregularVerbQuestions(amount) {
     const irregularVerbs =
         vocabulary.learning_english[
@@ -644,16 +580,134 @@ function shuffleArray(array) {
 }
 
 
-// SHOW PRACTICE SCREEN
 function showPracticeScreen() {
+
     document.getElementById("language-selection").hidden = true;
     document.getElementById("level-selection").hidden = true;
     document.getElementById("category-selection").hidden = true;
     document.getElementById("irregular-verbs-selection").hidden = true;
     document.getElementById("vocabulary-practice").hidden = false;
+
     const lang = getCurrentMessages();
-    document.getElementById("main-message").textContent = lang.translation_input;
-    document.getElementById("answer-button").textContent = lang.next;
+
+    document.getElementById("main-message").textContent =
+        lang.translation_input;
+
+    const instructions =
+        document.getElementById(
+            "translation-instructions"
+        );
+
+    if (instructions) {
+        instructions.textContent = "";
+        instructions.style.display = "none";
+    }
+
+    document.getElementById("answer-button").textContent =
+        lang.next;
+}
+
+// ==========================================================
+// UPDATE TRANSLATION INSTRUCTIONS
+// ==========================================================
+function updateTranslationInstructions() {
+
+    const instructions =
+        document.getElementById(
+            "translation-instructions"
+        );
+
+    if (!instructions) {
+        return;
+    }
+
+    const lang = getCurrentMessages();
+
+    // ======================================================
+    // RESET
+    // ======================================================
+
+    instructions.textContent = "";
+    instructions.style.display = "none";
+
+
+    // ======================================================
+    // GET CORRECT ANSWER
+    // ======================================================
+
+    const answer =
+        practiceState.currentAnswer;
+
+    if (!answer) {
+        return;
+    }
+
+
+    const messages = [];
+
+
+    // ======================================================
+    // PARENTHESES MARKER
+    // Example:
+    // "Matter (V)"
+    // "Previo (Intuicion)"
+    // ======================================================
+
+    const parenthesesMatch =
+        answer.match(
+            /\s(\([^()]+\))$/
+        );
+
+    if (parenthesesMatch) {
+
+        const marker =
+            parenthesesMatch[1];
+
+        messages.push(
+            lang.special_marker_parentheses.replace(
+                "{marker}",
+                marker
+            )
+        );
+    }
+
+
+    // ======================================================
+    // UNDERSCORE IDENTIFIER
+    // Example:
+    // "You_2"
+    // ======================================================
+
+    const underscoreMatch =
+        answer.match(
+            /(_[A-Za-z0-9]+)$/
+        );
+
+    if (underscoreMatch) {
+
+        const marker =
+            underscoreMatch[1];
+
+        messages.push(
+            lang.special_marker_underscore.replace(
+                "{marker}",
+                marker
+            )
+        );
+    }
+
+
+    // ======================================================
+    // SHOW ONLY IF THERE ARE INSTRUCTIONS
+    // ======================================================
+
+    if (messages.length > 0) {
+
+        instructions.textContent =
+            messages.join(" ");
+
+        instructions.style.display = "";
+    }
 }
 
 
@@ -679,7 +733,10 @@ function showCurrentQuestion() {
     practiceState.answered = false;
 
     // DISPLAY WORD
-    document.getElementById("question-word").textContent = practiceState.currentWord;
+    document.getElementById("question-word").textContent =practiceState.currentWord;
+
+    // UPDATE SPECIAL INSTRUCTIONS
+    updateTranslationInstructions();
 
     // PROGRESS
     const lang = getCurrentMessages();
@@ -698,16 +755,10 @@ function showCurrentQuestion() {
     // RESET INPUT
     input.value = "";
     input.disabled = false;
-    input.classList.remove(
-        "answer-input--correct",
-        "answer-input--incorrect"
-    );
+    input.classList.remove("answer-input--correct", "answer-input--incorrect");
 
     // RESET QUESTION BODY
-    questionBody.classList.remove(
-        "question__body--correct",
-        "question__body--incorrect"
-    );
+    questionBody.classList.remove("question__body--correct", "question__body--incorrect");
     // FOCUS
     input.focus();
 
@@ -737,7 +788,6 @@ function updatePracticeStats() {
     ).textContent =
         `❌ ${lang.incorrect}: ${practiceState.incorrectAnswers}`;
 
-
     // PROGRESS
     const answered = practiceState.correctAnswers + practiceState.incorrectAnswers;
     const total = practiceState.totalQuestions;
@@ -761,7 +811,6 @@ function updatePracticeStats() {
         "progress-bar"
     ).style.width =
         `${percentage}%`;
-
 
     // ROUND COUNT
     document.getElementById(
@@ -813,14 +862,15 @@ function handleAnswer() {
         },
         delay
     );
-
 }
 
 // NORMALIZE ANSWER
 function normalizeAnswer(answer) {
     return answer
         .trim()
-        .toLowerCase();
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 }
 
 // SHOW CORRECT ANSWER
@@ -878,25 +928,299 @@ function nextQuestion() {
     showCurrentQuestion();
 }
 
-// FINISH PRACTICE
-function finishPractice() {
+function updateReturnToStartButton() {
+    const button =
+        document.getElementById("back-to-start-button");
+
+    if (!button) {
+        return;
+    }
+
     const lang = getCurrentMessages();
 
+    button.textContent =
+        lang.return_to_start;
+}
+
+// SHOW PRACTICE RESULT
+function showPracticeResult() {
+    const lang = getCurrentMessages();
+    const total = practiceState.totalQuestions;
+    const correct = practiceState.correctAnswers;
+    const incorrect = practiceState.incorrectAnswers;
+
+    const percentage =
+        total > 0
+            ? Math.round(
+                (correct / total) * 100
+            )
+            : 0;
+
+    // TITLE
+    document.getElementById("practice-result-title").textContent = lang.practice_finished;
+
+    // SCORE
     document.getElementById(
-        "question-word"
+        "practice-result-score"
     ).textContent =
-        "🎉";
+        lang.score_result.replace(
+            "{percentage}",
+            percentage
+        );
 
+    // STATISTICS
     document.getElementById(
-        "question-progress"
+        "practice-result-stats"
     ).textContent =
-        `${practiceState.totalQuestions}/${practiceState.totalQuestions}`;
+        `${correct} ${lang.correct_results} · ` +
+        `${incorrect} ${lang.incorrect_results}`;
+    
+    // RETURN BUTTON
+    updateReturnToStartButton();
 
+    // SHOW RESULT
+    document.getElementById(
+        "practice-result"
+    ).hidden = false;
+}
 
+// FINISH PRACTICE
+function finishPractice() {
+    // HIDE QUESTION
+    document.getElementById("question-word").style.display = "none";
+    // HIDE ANSWER INPUT
     document.getElementById("answer-input").style.display = "none";
+    // HIDE ANSWER BUTTON
     document.getElementById("answer-button").style.display = "none";
-    document.getElementById("answer-feedback").textContent = lang.correct;
-    document.getElementById("answer-feedback").className = "answer-feedback answer-feedback--correct";
+    // HIDE FEEDBACK
+    document.getElementById("answer-feedback").style.display ="none";
+    // HIDE SPECIAL INSTRUCTIONS
+    const instructions = document.getElementById("translation-instructions");
+    if (instructions) {
+        instructions.textContent = "";
+    }
+
+    // SHOW RESULT
+    showPracticeResult();
+}
+
+// ==========================================================
+// RETURN TO START
+// ==========================================================
+function returnToStart() {
+
+    // ======================================================
+    // RESET PRACTICE RESULT
+    // ======================================================
+
+    const practiceResult =
+        document.getElementById("practice-result");
+
+    if (practiceResult) {
+        practiceResult.hidden = true;
+    }
+
+    const resultTitle =
+        document.getElementById(
+            "practice-result-title"
+        );
+
+    const resultScore =
+        document.getElementById(
+            "practice-result-score"
+        );
+
+    const resultStats =
+        document.getElementById(
+            "practice-result-stats"
+        );
+
+    if (resultTitle) {
+        resultTitle.textContent = "";
+    }
+
+    if (resultScore) {
+        resultScore.textContent = "";
+    }
+
+    if (resultStats) {
+        resultStats.textContent = "";
+    }
+
+
+    // ======================================================
+    // SHOW INITIAL SCREEN
+    // ======================================================
+
+    document.getElementById(
+        "language-selection"
+    ).hidden = false;
+
+
+    // HIDE OTHER SCREENS
+
+    document.getElementById(
+        "level-selection"
+    ).hidden = true;
+
+    document.getElementById(
+        "category-selection"
+    ).hidden = true;
+
+    document.getElementById(
+        "irregular-verbs-selection"
+    ).hidden = true;
+
+    document.getElementById(
+        "vocabulary-practice"
+    ).hidden = true;
+
+    document.getElementById(
+        "irregular-tenses-practice"
+    ).hidden = true;
+
+
+    // ======================================================
+    // RESET IRREGULAR TENSES UI
+    // ======================================================
+
+    const irregularGrid =
+        document.getElementById(
+            "irregular-tenses-grid"
+        );
+
+    if (irregularGrid) {
+        irregularGrid.innerHTML = "";
+    }
+
+    const irregularFeedback =
+        document.getElementById(
+            "irregular-answer-feedback"
+        );
+
+    if (irregularFeedback) {
+        irregularFeedback.textContent = "";
+        irregularFeedback.className =
+            "answer-feedback";
+    }
+
+    const irregularButton =
+        document.getElementById(
+            "irregular-answer-button"
+        );
+
+    if (irregularButton) {
+        irregularButton.style.display = "";
+        irregularButton.disabled = false;
+    }
+
+    const questionWord =
+        document.getElementById(
+            "question-word"
+        );
+
+    questionWord.style.display = "";
+    questionWord.textContent = "";
+
+
+    const answerInput =
+        document.getElementById(
+            "answer-input"
+        );
+
+    answerInput.style.display = "";
+    answerInput.value = "";
+    answerInput.disabled = false;
+
+    answerInput.classList.remove(
+        "answer-input--correct",
+        "answer-input--incorrect"
+    );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-button"
+        );
+
+    answerButton.style.display = "";
+    answerButton.disabled = false;
+
+
+    const feedback =
+        document.getElementById(
+            "answer-feedback"
+        );
+
+    feedback.style.display = "";
+    feedback.textContent = "";
+    feedback.className =
+        "answer-feedback";
+
+
+    // ======================================================
+    // RESET SPECIAL INSTRUCTIONS
+    // ======================================================
+
+    const instructions =
+        document.getElementById(
+            "translation-instructions"
+        );
+
+    if (instructions) {
+        instructions.textContent = "";
+        instructions.style.display = "none";
+    }
+
+
+    // ======================================================
+    // RESET PRACTICE STATE
+    // ======================================================
+
+    practiceState.questions = [];
+
+    practiceState.currentQuestion = 0;
+
+    practiceState.totalQuestions = 0;
+
+    practiceState.currentWord = null;
+
+    practiceState.currentAnswer = null;
+
+    practiceState.answered = false;
+
+    practiceState.correctAnswers = 0;
+
+    practiceState.incorrectAnswers = 0;
+
+
+    // IRREGULAR VERBS
+
+    practiceState.irregularTenseQuestions = [];
+
+    practiceState.irregularTenseAttempt = 1;
+
+    practiceState.irregularTenseAnswered = false;
+
+
+    // ======================================================
+    // RESET STATS
+    // ======================================================
+
+    updatePracticeStats();
+
+
+    // ======================================================
+    // INITIAL MESSAGE
+    // ======================================================
+
+    const lang =
+        getCurrentMessages();
+
+    document.getElementById(
+        "main-message"
+    ).textContent =
+        lang.language_selection;
 }
 
 // ==========================================================
