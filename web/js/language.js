@@ -1,7 +1,6 @@
 // ==========================================================
 // Idioma de las palabras
 // ==========================================================
-
 function initializeLanguageSelection() {
     const buttons =
         document.querySelectorAll(

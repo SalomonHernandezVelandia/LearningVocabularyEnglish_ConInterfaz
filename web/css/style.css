@@ -474,6 +474,14 @@ p {
 
 .question {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question > .button {
+  width: 50%;
 }
 
 .question__progress {
