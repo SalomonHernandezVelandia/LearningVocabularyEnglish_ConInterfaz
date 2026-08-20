@@ -79,3 +79,8 @@ function handleIrregularTensesEnter(event) {
     }
     handleIrregularTensesAnswer();
 }
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initializePractice
+);

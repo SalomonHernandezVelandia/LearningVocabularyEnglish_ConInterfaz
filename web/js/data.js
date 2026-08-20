@@ -36,14 +36,14 @@ async function loadData() {
             categoriesResponse,
             vocabularyResponse
         ] = await Promise.all([
-            fetch("../data/messages.json"),
-            fetch("../data/levels.json"),
-            fetch("../data/categories.json"),
-            fetch("../data/vocabulary.json")
-            // fetch("/data/messages.json"),
-            // fetch("/data/levels.json"),
-            // fetch("/data/categories.json"),
-            // fetch("/data/vocabulary.json")
+            // fetch("../data/messages.json"),
+            // fetch("../data/levels.json"),
+            // fetch("../data/categories.json"),
+            // fetch("../data/vocabulary.json")
+            fetch("/data/messages.json"),
+            fetch("/data/levels.json"),
+            fetch("/data/categories.json"),
+            fetch("/data/vocabulary.json")
         ]);
 
 

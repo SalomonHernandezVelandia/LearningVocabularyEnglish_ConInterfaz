@@ -229,3 +229,77 @@ function showCurrentIrregularTensesQuestion() {
         firstInput.focus();
     }
 }
+
+function showIrregularTensesCorrectFeedback() {
+
+    const feedback =
+        document.getElementById(
+            "irregular-answer-feedback"
+        );
+
+    const lang = getCurrentMessages();
+
+    feedback.textContent =
+        `✓ ${lang.correct}`;
+
+    feedback.className =
+        "answer-feedback answer-feedback--correct";
+}
+
+
+function showIrregularTensesIncorrectFeedback() {
+
+    const feedback =
+        document.getElementById(
+            "irregular-answer-feedback"
+        );
+
+    const lang =
+        getCurrentMessages();
+
+    const inputs =
+        document.querySelectorAll(
+            ".irregular-tense-input"
+        );
+
+    const corrections = [];
+
+    inputs.forEach(
+        input => {
+
+            if (
+                input.classList.contains(
+                    "irregular-tense-input--incorrect"
+                )
+            ) {
+                corrections.push(
+                    input.dataset.answer
+                );
+            }
+        }
+    );
+
+    feedback.textContent =
+        `✗ ${lang.incorrect} — ${corrections.join(" / ")}`;
+
+    feedback.className =
+        "answer-feedback answer-feedback--incorrect";
+}
+
+
+
+function nextIrregularTenseQuestion() {
+
+    practiceState.currentQuestion++;
+
+    showCurrentIrregularTensesQuestion();
+}
+
+function finishIrregularTensesPractice() {
+
+    document.getElementById(
+        "irregular-tenses-practice"
+    ).hidden = true;
+
+    showPracticeResult();
+}
