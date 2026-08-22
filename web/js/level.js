@@ -136,9 +136,7 @@ function updateLevelStatus() {
 // SHOW CUSTOM AMOUNT
 // ==========================================================
 function showCustomAmount() {
-
-    const container =
-        document.getElementById("level-options");
+    const container = document.getElementById("level-options");
 
     const customButton =
         container.querySelector(
@@ -146,51 +144,32 @@ function showCustomAmount() {
         );
 
     if (!customButton) {
-        console.error(
-            "Custom amount button was not found."
-        );
+        console.error("Custom amount button was not found.");
         return;
     }
 
     // Evitar crear el formulario dos veces
-    const existingForm =
-        document.getElementById("custom-amount");
+    const existingForm = document.getElementById("custom-amount");
 
     if (existingForm) {
         existingForm.remove();
     }
-
     const lang = getCurrentMessages();
 
-    // ======================================================
     // CUSTOM AMOUNT CONTAINER
-    // ======================================================
-
-    const customAmount =
-        document.createElement("div");
-
+    const customAmount = document.createElement("div");
     customAmount.className = "custom-amount";
     customAmount.id = "custom-amount";
 
-    // ======================================================
     // LABEL
-    // ======================================================
-
-    const label =
-        document.createElement("label");
-
+    const label = document.createElement("label");
     label.className = "custom-amount__label";
     label.id = "custom-amount-label";
     label.htmlFor = "custom-amount-input";
     label.textContent = lang.word_count_label;
 
-    // ======================================================
     // INPUT
-    // ======================================================
-
-    const input =
-        document.createElement("input");
-
+    const input = document.createElement("input");
     input.className = "custom-amount__input";
     input.id = "custom-amount-input";
     input.type = "number";
@@ -198,28 +177,14 @@ function showCustomAmount() {
     input.step = "1";
     input.autocomplete = "off";
 
-    // ======================================================
     // CONTINUE BUTTON
-    // ======================================================
-
-    const continueButton =
-        document.createElement("button");
-
-    continueButton.className =
-        "button button--primary";
-
-    continueButton.id =
-        "custom-amount-continue";
-
+    const continueButton = document.createElement("button");
+    continueButton.className = "button button--primary";
+    continueButton.id = "custom-amount-continue";
     continueButton.type = "button";
+    continueButton.textContent = lang.continue;
 
-    continueButton.textContent =
-        lang.continue;
-
-    // ======================================================
     // EVENTS
-    // ======================================================
-
     continueButton.addEventListener(
         "click",
         continueWithCustomAmount
@@ -238,27 +203,18 @@ function showCustomAmount() {
         }
     );
 
-    // ======================================================
     // BUILD
-    // ======================================================
-
     customAmount.appendChild(label);
     customAmount.appendChild(input);
     customAmount.appendChild(continueButton);
 
-    // ======================================================
     // INSERT DIRECTLY BELOW CUSTOM BUTTON
-    // ======================================================
-
     customButton.insertAdjacentElement(
         "afterend",
         customAmount
     );
 
-    // ======================================================
     // FOCUS
-    // ======================================================
-
     input.focus();
 }
 

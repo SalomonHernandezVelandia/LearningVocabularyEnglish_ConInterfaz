@@ -12,19 +12,43 @@ function generateQuestions(category, amount) {
     if (category === "Aleatorio") {
         categoryVocabulary = getAllVocabulary();
     } else {
-        categoryVocabulary = vocabulary.learning_english[category];
+        categoryVocabulary =
+            vocabulary.learning_english[category];
     }
 
+    // VALIDATE CATEGORY
     if (!categoryVocabulary) {
-        console.error(`Category "${category}" was not found.`);
+        console.error(
+            `Category "${category}" was not found.`
+        );
         return [];
     }
 
+    // GET WORDS
     const entries = Object.entries(categoryVocabulary);
-    shuffleArray(entries);
-    const questionAmount = Math.min(amount,entries.length);
+    if (entries.length === 0) {
+        console.error(
+            `Category "${category}" has no vocabulary.`
+        );
+        return [];
+    }
 
-    return entries.slice(0, questionAmount);
+    // GENERATE QUESTIONS
+    const questions = [];
+    while (questions.length < amount) {
+        // Create a new shuffled cycle
+        const cycle = [...entries];
+        shuffleArray(cycle);
+        // Add words from this cycle
+        for (const entry of cycle) {
+            questions.push(entry);
+            // Stop exactly when we reach the requested amount
+            if (questions.length >= amount) {
+                break;
+            }
+        }
+    }
+    return questions;
 }
 
 
